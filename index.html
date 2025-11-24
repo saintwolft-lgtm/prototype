@@ -1,0 +1,1941 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лейбл Групп - Типография полного цикла | Маркировка и упаковка</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #333333;
+            --accent-color: #333333;
+            --text-dark: #555555;
+            --text-heading: #333333;
+            --text-light: #777777;
+            --bg-light: #f5f5f5;
+            --white: #ffffff;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-top: 60px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Fixed Top Menu */
+        .top-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 0;
+        }
+
+        .top-menu-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+            gap: 30px;
+        }
+
+        .menu-left {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex: 1;
+        }
+
+        .menu-brand {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-heading);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .menu-nav {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .menu-nav a {
+            font-size: 14px;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .menu-nav a:hover {
+            color: var(--text-heading);
+        }
+
+        .menu-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 13px;
+            color: var(--text-dark);
+        }
+
+        .menu-right > * {
+            white-space: nowrap;
+        }
+
+        .menu-divider {
+            color: var(--border-color);
+            user-select: none;
+        }
+
+        .menu-phone {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .menu-phone:hover {
+            color: var(--text-heading);
+        }
+
+        .menu-social {
+            display: flex;
+            gap: 8px;
+        }
+
+        .menu-social a {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .menu-social a:hover {
+            color: var(--text-heading);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--white);
+            color: var(--text-dark);
+            padding: 80px 0 80px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: var(--text-heading);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--text-heading);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #000;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-heading);
+            border: 2px solid var(--text-heading);
+        }
+
+        .btn-secondary:hover {
+            background: var(--text-heading);
+            color: var(--white);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: var(--text-heading);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-top: -30px;
+            margin-bottom: 50px;
+        }
+
+        /* Problems Section */
+        .problems {
+            background: var(--bg-light);
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .problem-card {
+            background: var(--white);
+            padding: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .problem-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .problem-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-heading);
+        }
+
+        .problem-card p {
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        /* Solutions Section */
+        .solutions {
+            background: var(--white);
+        }
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .solution-card {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .solution-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .solution-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--text-heading);
+        }
+
+        .solution-card p {
+            color: var(--text-dark);
+            font-size: 1.05rem;
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--bg-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 30px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: var(--text-heading);
+        }
+
+        .service-card p {
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .service-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            margin: 15px 0 10px;
+        }
+
+        .service-time {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            padding: 8px 12px;
+            background: var(--bg-light);
+            display: inline-block;
+        }
+
+        .service-card .btn {
+            width: 100%;
+            text-align: center;
+            padding: 12px 20px;
+            font-size: 1rem;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--white);
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        .stats .section-title {
+            color: var(--text-heading);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-heading);
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .stat-text {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        /* Advantages Section */
+        .advantages {
+            background: var(--bg-light);
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .advantage-card {
+            background: var(--white);
+            padding: 30px;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .advantage-num {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background: var(--text-heading);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .advantage-card h3 {
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            color: var(--text-heading);
+        }
+
+        .advantage-card p {
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        /* Process Section */
+        .process {
+            background: var(--white);
+        }
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            position: relative;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 30px 20px;
+            background: var(--bg-light);
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: var(--text-heading);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        .process-step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--text-heading);
+        }
+
+        .process-step p {
+            color: var(--text-dark);
+        }
+
+        /* Cases Section */
+        .cases {
+            background: var(--bg-light);
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .case-card {
+            background: var(--white);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .case-image {
+            width: 100%;
+            height: 200px;
+            background: var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .case-content {
+            padding: 25px;
+        }
+
+        .case-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--text-heading);
+        }
+
+        .case-content p {
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .case-result {
+            font-weight: 500;
+            color: var(--text-heading);
+        }
+
+        /* Equipment Section */
+        .equipment {
+            background: var(--white);
+        }
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .equipment-card {
+            background: var(--white);
+            padding: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .equipment-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .equipment-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--text-heading);
+        }
+
+        .equipment-card p {
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: var(--bg-light);
+        }
+
+        .gallery-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .gallery-tab {
+            padding: 12px 30px;
+            background: var(--white);
+            border: 2px solid var(--text-heading);
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-heading);
+        }
+
+        .gallery-tab:hover {
+            background: var(--text-heading);
+            color: var(--white);
+        }
+
+        .gallery-tab.active {
+            background: var(--text-heading);
+            color: var(--white);
+        }
+
+        .gallery-content {
+            display: none;
+        }
+
+        .gallery-content.active {
+            display: grid;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+        }
+
+        .gallery-placeholder {
+            width: 100%;
+            height: 100%;
+            background: var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            background: var(--white);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 3rem;
+            color: var(--white);
+            cursor: pointer;
+            font-weight: 300;
+        }
+
+        /* CTA Sections */
+        .cta-section {
+            background: var(--bg-light);
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--text-dark);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* CTA Block 1 - УТП с цифрами */
+        .cta-block-1 {
+            background: var(--white);
+            padding: 60px 0;
+        }
+
+        .cta-block-1 .cta-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .cta-block-1 h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            margin-bottom: 15px;
+        }
+
+        .cta-block-1 .subtitle {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+        }
+
+        .cta-block-1 .cta-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cta-benefits {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .benefit-item {
+            background: var(--bg-light);
+            padding: 25px;
+            border: 1px solid var(--border-color);
+        }
+
+        .benefit-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            margin-bottom: 10px;
+        }
+
+        .benefit-label {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+
+        .cta-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* CTA Block 2 - Форма с цифрами */
+        .cta-block-2 {
+            background: var(--white);
+            padding: 60px 0;
+        }
+
+        .cta-block-2 .cta-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .cta-block-2 h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            margin-bottom: 15px;
+        }
+
+        .cta-block-2 .subtitle {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+        }
+
+        .cta-block-2 .cta-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cta-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .stat-item-cta {
+            text-align: left;
+        }
+
+        .stat-item-cta .stat-header {
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .stat-item-cta .stat-num {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-heading);
+        }
+
+        .stat-item-cta .stat-lbl {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-heading);
+        }
+
+        .stat-item-cta .stat-desc {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+
+        /* Form */
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .cta-block-2 .form-container {
+            max-width: 100%;
+            padding: 0;
+            border: none;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-heading);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            font-size: 1rem;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--text-heading);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: var(--bg-light);
+        }
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px 25px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--text-heading);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            background: var(--bg-light);
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            padding: 0 25px 20px;
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-light);
+            color: var(--text-dark);
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 10px 0;
+            color: var(--text-dark);
+        }
+        
+        footer strong {
+            color: var(--text-heading);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .menu-right {
+                font-size: 12px;
+                gap: 10px;
+            }
+            
+            .menu-left {
+                gap: 20px;
+            }
+            
+            .menu-nav {
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .menu-right span:nth-child(1),
+            .menu-right span:nth-child(2),
+            .menu-right span:nth-child(3) {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-menu-container {
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px 20px;
+            }
+            
+            .menu-left {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                width: 100%;
+            }
+            
+            .menu-right {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+            
+            .menu-nav {
+                gap: 12px;
+            }
+            
+            body {
+                padding-top: 100px;
+            }
+            
+            .hero {
+                padding-top: 40px !important;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .problems-grid,
+            .solutions-grid,
+            .services-grid,
+            .stats-grid,
+            .advantages-grid,
+            .process-steps,
+            .cases-grid,
+            .equipment-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .form-container {
+                padding: 25px;
+            }
+            
+            .cta-block-1 .cta-content,
+            .cta-block-2 .cta-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Top Menu -->
+    <nav class="top-menu">
+        <div class="top-menu-container">
+            <div class="menu-left">
+                <a class="menu-brand" href="#">Лейбл Групп</a>
+                <nav class="menu-nav">
+                    <a href="#services">Услуги</a>
+                    <a href="#cases">Портфолио</a>
+                    <a href="#stats">О компании</a>
+                </nav>
+            </div>
+            <div class="menu-right">
+                <span>📍 Барнаул, Алтайский край</span>
+                <span class="menu-divider">|</span>
+                <span>🕐 Пн-Пт, 9:00-18:00</span>
+                <span class="menu-divider">|</span>
+                <a href="tel:+79061234567" class="menu-phone">☎️ +7 (906) 123-45-67</a>
+                <span class="menu-divider">|</span>
+                <span class="menu-social">
+                  <a href="https://vk.com/label_group" target="_blank" rel="noopener noreferrer" title="VK">VK</a>
+                  <span style="color:var(--border-color);">/</span>
+                  <a href="mailto:uav@label-group.ru" target="_blank" rel="noopener noreferrer" title="Email">Email</a>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    
+    <section class="hero" style="padding-top:80px;">
+        <div class="container">
+            <h1>Лейбл Групп — типография полного цикла</h1>
+            <p>Этикетки, упаковка, маркировка Честный знак за 3-5 дней. Собственное производство 1500 м²</p>
+            <div class="hero-cta">
+                <a href="#services" class="btn btn-primary">Заказать печать</a>
+                <a href="#contact-final" class="btn btn-secondary">Получить консультацию</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section id="problems" class="problems" style="background:var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">С чем сталкиваются наши клиенты?</h2>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">🕐</div>
+                    <h3>Срыв сроков</h3>
+                    <p>Поставщик откладывает заказ, вы срываете договоры с клиентами. Маркетплейсы не ждут.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">💔</div>
+                    <h3>Брак в партии</h3>
+                    <p>5% продукции идет в брак, это потери денег и имиджа. Нужна идеальная печать.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">📞</div>
+                    <h3>Нет обратной связи</h3>
+                    <p>Звоните, никто не берет трубку. Не знаете статус заказа, живете в неопределенности.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">💰</div>
+                    <h3>Переплачиваете</h3>
+                    <p>Цена в 1.5 раза выше, чем могла бы быть. Посредники берут свое.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="solutions" style="background:var(--white);">
+        <div class="container">
+            <h2 class="section-title">Почему Лейбл Групп решает эти проблемы</h2>
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <div class="solution-icon">⚙️</div>
+                    <h3>Собственное производство</h3>
+                    <p>1500 м² площадей + 10 единиц оборудования = никаких посредников, никаких задержек</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">👥</div>
+                    <h3>35 лучших специалистов</h3>
+                    <p>Каждый — профессионал высочайшего уровня = контроль качества на каждом этапе</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">🚚</div>
+                    <h3>Собственный транспорт</h3>
+                    <p>Доставляем сами по краю и СФО = быстро, безопасно, отслеживаемо 24/7</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services" style="background:var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">Всё что нужно для маркировки и упаковки</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📦</div>
+                    <h3>Самоклеящиеся этикетки</h3>
+                    <p>Рулоны, разные форматы, флексопечать, яркие цвета</p>
+                    <div class="service-price">Стоимость от: 2500₽</div>
+                    <div class="service-time">⏱️ Сроки печати: 3-5 дней</div>
+                    <a href="#contact-final" class="btn btn-primary">Заказать от 2500₽</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📄</div>
+                    <h3>Бесклеевые этикетки</h3>
+                    <p>Быстрая цифровая печать, этикеточная бумага</p>
+                    <div class="service-price">Стоимость от: 1800₽</div>
+                    <div class="service-time">⏱️ Сроки печати: 2-4 дня</div>
+                    <a href="#contact-final" class="btn btn-primary">Заказать от 1800₽</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎁</div>
+                    <h3>Упаковка</h3>
+                    <p>Пленки, бумаги, фольга, полный спектр</p>
+                    <div class="service-price">Стоимость от: 3500₽</div>
+                    <div class="service-time">⏱️ Сроки печати: 4-6 дней</div>
+                    <a href="#contact-final" class="btn btn-primary">Заказать от 3500₽</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏷️</div>
+                    <h3>Маркировка Честный знак</h3>
+                    <p>DataMatrix коды высочайшего качества</p>
+                    <div class="service-price">Стоимость от: 4200₽</div>
+                    <div class="service-time">⏱️ Сроки печати: 5-7 дней</div>
+                    <a href="#contact-final" class="btn btn-primary">Заказать от 4200₽</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔌</div>
+                    <h3>Расходники</h3>
+                    <p>Термотрансферные ленты, риббоны</p>
+                    <div class="service-price">Стоимость от: 1200₽</div>
+                    <div class="service-time">⏱️ Сроки печати: 1-2 дня</div>
+                    <a href="#contact-final" class="btn btn-primary">Заказать от 1200₽</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🖨️</div>
+                    <h3>Принтеры и оборудование</h3>
+                    <p>Продаем и консультируем</p>
+                    <div class="service-price">Консультация бесплатно</div>
+                    <div class="service-time">⏱️ Сроки: По договору</div>
+                    <a href="#contact-final" class="btn btn-primary">Получить консультацию</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats" style="background:var(--white);">
+        <div class="container">
+            <h2 class="section-title">350+ компаний уже работают с нами 11 лет</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">11</div>
+                    <div class="stat-label">ЛЕТ НА РЫНКЕ</div>
+                    <div class="stat-text">Надежность и проверка временем</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">350+</div>
+                    <div class="stat-label">КЛИЕНТОВ</div>
+                    <div class="stat-text">Социальное доказательство</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">35</div>
+                    <div class="stat-label">СПЕЦИАЛИСТОВ</div>
+                    <div class="stat-text">Экспертиза и опыт</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">МАШИН</div>
+                    <div class="stat-text">Мощность производства</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section id="advantages" class="advantages" style="background:var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">Наши 7 преимуществ</h2>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-num">1</div>
+                    <h3>Быстро: 3-5 дней</h3>
+                    <p>Срок от заказа до отправки. У конкурентов 10-14. Собственное оборудование решает.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-num">2</div>
+                    <h3>Честная цена</h3>
+                    <p>Прямые поставки сырья = экономия до 30%. Конкуренты работают через посредников.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-num">3</div>
+                    <h3>Гарантия качества</h3>
+                    <p>10 единиц оборудования = контроль на каждом этапе. Брак ≤0.5%.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-num">4</div>
+                    <h3>Маркировка Честный знак</h3>
+                    <p>Печатаем DataMatrix коды высочайшего качества. Требует спецоборудования.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-num">5</div>
+                    <h3>Расходники здесь же</h3>
+                    <p>Ленты, бумага, принтеры — не ищите у других. Все под одной крышей.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-num">6</div>
+                    <h3>Собственная доставка</h3>
+                    <p>Видите статус 24/7. Конкуренты полагаются на курьеров, теряются сроки.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-num">7</div>
+                    <h3>Консультация бесплатно</h3>
+                    <p>Определим оптимальный способ печати лично с вами. Индивидуальный подход.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process" style="background:var(--white);">
+        <div class="container">
+            <h2 class="section-title">Как мы работаем</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="process-number">1</div>
+                    <h3>Заявка</h3>
+                    <p>Вы оставляете заявку онлайн или звоните. Менеджер связывается за 15 минут.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">2</div>
+                    <h3>Расчет</h3>
+                    <p>Уточняем детали, делаем расчет стоимости и сроков. Бесплатная консультация.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">3</div>
+                    <h3>Производство</h3>
+                    <p>Запускаем заказ в работу. Контролируем качество на каждом этапе печати.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">4</div>
+                    <h3>Доставка</h3>
+                    <p>Доставляем своим транспортом или передаем курьеру. Отслеживание 24/7.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cases Section -->
+    <section id="cases" class="cases" style="background:var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">Примеры работ</h2>
+            <div class="cases-grid">
+                <div class="case-card">
+                    <div class="case-image">Этикетки для молочного завода</div>
+                    <div class="case-content">
+                        <h3>Молочный завод «Сибирское молоко»</h3>
+                        <p>Задача: 50000 этикеток для новой линейки йогуртов</p>
+                        <p class="case-result">Результат: доставка за 4 дня, брак 0.2%</p>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-image">Маркировка для фармы</div>
+                    <div class="case-content">
+                        <h3>Фармацевтическая компания</h3>
+                        <p>Задача: маркировка Честный знак для 20000 упаковок лекарств</p>
+                        <p class="case-result">Результат: 100% распознавание кодов, сдано за 6 дней</p>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-image">Упаковка для электроники</div>
+                    <div class="case-content">
+                        <h3>Магазин электроники</h3>
+                        <p>Задача: упаковка с брендированием для 15000 единиц товара</p>
+                        <p class="case-result">Результат: уникальный дизайн, доставка точно в срок</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipment Section -->
+    <section id="equipment" class="equipment" style="background:var(--white);">
+        <div class="container">
+            <h2 class="section-title">На что печатаем: современное оборудование</h2>
+            <div class="equipment-grid">
+                <div class="equipment-card">
+                    <div class="equipment-icon">⚙️</div>
+                    <h3>Машина флексопечати BOBST</h3>
+                    <p>Производительность: 10000 шт/час. Для крупных партий этикеток.</p>
+                </div>
+                <div class="equipment-card">
+                    <div class="equipment-icon">⚙️</div>
+                    <h3>Машина флексопечати Comexi</h3>
+                    <p>Многокрасочная печать, высочайшее качество. Для спецзаказов.</p>
+                </div>
+                <div class="equipment-card">
+                    <div class="equipment-icon">💻</div>
+                    <h3>Цифровой принтер HP Indigo</h3>
+                    <p>Для малых партий (500-2000 шт), быстрая печать, яркие цвета.</p>
+                </div>
+                <div class="equipment-card">
+                    <div class="equipment-icon">🏷️</div>
+                    <h3>Система маркировки (DataMatrix)</h3>
+                    <p>Печать защитных кодов Честный знак с 100% точностью.</p>
+                </div>
+                <div class="equipment-card">
+                    <div class="equipment-icon">✅</div>
+                    <h3>Система контроля качества</h3>
+                    <p>Автоматическая проверка каждого метра печати. Брак ≤0.5%.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery" style="background:var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">Галерея нашей продукции</h2>
+            <div class="gallery-tabs">
+                <div class="gallery-tab active" data-category="etiketi">Этикетки</div>
+                <div class="gallery-tab" data-category="upakovka">Упаковка</div>
+                <div class="gallery-tab" data-category="markirovka">Маркировка</div>
+                <div class="gallery-tab" data-category="rasxodniki">Расходники</div>
+            </div>
+            
+            <div class="gallery-content active" id="etiketi">
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-title="Этикетка молока - Простокваша">
+                        <div class="gallery-placeholder">[Этикетка молока - Простокваша]</div>
+                    </div>
+                    <div class="gallery-item" data-title="Этикетка энергетика - RedBull">
+                        <div class="gallery-placeholder">[Этикетка энергетика - RedBull]</div>
+                    </div>
+                    <div class="gallery-item" data-title="Этикетка косметики - шампунь">
+                        <div class="gallery-placeholder">[Этикетка косметики - шампунь]</div>
+                    </div>
+                    <div class="gallery-item" data-title="Этикетка парфюма - роль-он">
+                        <div class="gallery-placeholder">[Этикетка парфюма - роль-он]</div>
+                    </div>
+                    <div class="gallery-item" data-title="Этикетка в рулоне - 10000 шт">
+                        <div class="gallery-placeholder">[Этикетка в рулоне - 10000 шт]</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-content" id="upakovka">
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-title="Коробка электроники - Amazon">
+                        <div class="gallery-placeholder">[Коробка электроники - Amazon]</div>
+                    </div>
+                    <div class="gallery-item" data-title="Пакет с застежкой - кофе">
+                        <div class="gallery-placeholder">[Пакет с застежкой - кофе]</div>
+                    </div>
+                    <div class="gallery-item" data-title="Ламинированная упаковка - игрушки">
+                        <div class="gallery-placeholder">[Ламинированная упаковка - игрушки]</div>
+                    </div>
+                    <div class="gallery-item" data-title="Гофрокартон - посылка">
+                        <div class="gallery-placeholder">[Гофрокартон - посылка]</div>
+                    </div>
+                    <div class="gallery-item" data-title="Фольга серебро - конфеты">
+                        <div class="gallery-placeholder">[Фольга серебро - конфеты]</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-content" id="markirovka">
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-title="DataMatrix код - таблетки">
+                        <div class="gallery-placeholder">[DataMatrix код - таблетки]</div>
+                    </div>
+                    <div class="gallery-item" data-title="QR код - лекарство">
+                        <div class="gallery-placeholder">[QR код - лекарство]</div>
+                    </div>
+                    <div class="gallery-item" data-title="Защитный код - парфюм">
+                        <div class="gallery-placeholder">[Защитный код - парфюм]</div>
+                    </div>
+                    <div class="gallery-item" data-title="Голограмма + код - элитные часы">
+                        <div class="gallery-placeholder">[Голограмма + код - элитные часы]</div>
+                    </div>
+                    <div class="gallery-item" data-title="Объемный код на фольге - бижутерия">
+                        <div class="gallery-placeholder">[Объемный код на фольге - бижутерия]</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-content" id="rasxodniki">
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-title="Рулон ленты - красная">
+                        <div class="gallery-placeholder">[Рулон ленты - красная]</div>
+                    </div>
+                    <div class="gallery-item" data-title="Рулон ленты - черная">
+                        <div class="gallery-placeholder">[Рулон ленты - черная]</div>
+                    </div>
+                    <div class="gallery-item" data-title="Риббон восковой - рулон">
+                        <div class="gallery-placeholder">[Риббон восковой - рулон]</div>
+                    </div>
+                    <div class="gallery-item" data-title="Этикеточная бумага - рулон">
+                        <div class="gallery-placeholder">[Этикеточная бумага - рулон]</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content" id="lightbox-content"></div>
+    </div>
+
+    <!-- CTA Block #1 - USP with Numbers -->
+    <section id="contact-mid" class="cta-block-1" style="background:var(--white);">
+        <div class="container">
+            <div class="cta-header">
+                <h2>Нужна консультация?</h2>
+                <p class="subtitle">Определим лучшее решение за 15 минут</p>
+            </div>
+            <div class="cta-content">
+                <div class="cta-benefits">
+                    <div class="benefit-item">
+                        <div class="benefit-number">50%</div>
+                        <div class="benefit-label">экономии за счет прямых поставок</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-number">3-5</div>
+                        <div class="benefit-label">дней вместо 10-14 у конкурентов</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-number">≤0.5%</div>
+                        <div class="benefit-label">брака вместо 3-5% у других</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-number">100%</div>
+                        <div class="benefit-label">консультация бесплатно</div>
+                    </div>
+                </div>
+                <div class="cta-actions">
+                    <a href="tel:+79001234567" class="btn btn-primary">Позвонить</a>
+                    <a href="#contact-final" class="btn btn-secondary">Заполнить форму</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq" style="background:var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">Часто задаваемые вопросы</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Какой минимальный тираж можно заказать?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Минимальный тираж зависит от типа печати. Для цифровой печати — от 500 штук, для флексопечати — от 5000 штук. Мы работаем как с крупными, так и с малыми партиями.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Можно ли заказать макет этикетки у вас?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Да, наши дизайнеры создадут для вас уникальный макет этикетки с учетом всех требований и пожеланий. Услуга платная, стоимость обсуждается индивидуально.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Какие форматы файлов вы принимаете?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Мы работаем с форматами AI, PDF, EPS, CDR. Для предварительного просмотра можете прислать PNG или JPEG. Наши специалисты помогут подготовить файлы к печати.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Как происходит оплата?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Работаем по безналичному расчету с юридическими лицами и ИП. Возможна предоплата 50% или 100%, обсуждается индивидуально. Все документы предоставляем в полном объеме.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Доставляете ли вы в другие города?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Да, доставляем по всей России. Собственным транспортом доставляем по Красноярскому краю и СФО. В другие регионы отправляем транспортными компаниями.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Что делать, если обнаружен брак?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            У нас брак менее 0.5%, но если вы обнаружили проблему — свяжитесь с менеджером. Мы либо заменим партию бесплатно, либо вернем деньги. Гарантия качества — наш приоритет.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Block #2 - Form with Stats -->
+    <section id="contact-final" class="cta-block-2" style="background:var(--white);">
+        <div class="container">
+            <div class="cta-header">
+                <h2>Готовы начать работу?</h2>
+                <p class="subtitle">350+ компаний уже выбрали Лейбл Групп</p>
+            </div>
+            <div class="cta-content">
+                <div class="cta-stats">
+                    <div class="stat-item-cta">
+                        <div class="stat-header">
+                            <div class="stat-num">11</div>
+                            <div class="stat-lbl">ЛЕТ</div>
+                        </div>
+                        <div class="stat-desc">Безупречной работы на рынке</div>
+                    </div>
+                    <div class="stat-item-cta">
+                        <div class="stat-header">
+                            <div class="stat-num">350+</div>
+                            <div class="stat-lbl">КЛИЕНТОВ</div>
+                        </div>
+                        <div class="stat-desc">Доверяют нам регулярно</div>
+                    </div>
+                    <div class="stat-item-cta">
+                        <div class="stat-header">
+                            <div class="stat-num">0.5%</div>
+                            <div class="stat-lbl">БРАКА</div>
+                        </div>
+                        <div class="stat-desc">Максимальное качество</div>
+                    </div>
+                </div>
+                <div class="form-container">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Ваше имя *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Компания</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Телефон *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Сообщение</label>
+                            <textarea id="message" name="message" placeholder="Опишите вашу задачу"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg">ОТПРАВИТЬ</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    
+    <footer>
+        <div class="container">
+            <p><strong>Лейбл Групп</strong> — типография полного цикла</p>
+            <p>📍 Красноярск, ул. Производственная, 1</p>
+            <p>📞 +7 (900) 123-45-67</p>
+            <p>✉️ info@labelgroup.ru</p>
+            <p style="margin-top: 30px; opacity: 0.7;">&copy; 2025 Лейбл Групп. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Gallery Tabs
+        document.querySelectorAll('.gallery-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const category = tab.dataset.category;
+                
+                // Update active tab
+                document.querySelectorAll('.gallery-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Update active content
+                document.querySelectorAll('.gallery-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                document.getElementById(category).classList.add('active');
+            });
+        });
+
+        // Gallery Lightbox
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const title = item.dataset.title;
+                const lightbox = document.getElementById('lightbox');
+                const lightboxContent = document.getElementById('lightbox-content');
+                
+                lightboxContent.innerHTML = `<h2 style="color: var(--text-heading); margin-bottom: 20px;">${title}</h2><div style="font-size: 1.2rem; color: var(--text-dark);">Изображение продукции</div>`;
+                lightbox.classList.add('active');
+            });
+        });
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        // Close lightbox on background click
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') {
+                closeLightbox();
+            }
+        });
+
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            
+            if (name && phone) {
+                alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.');
+                e.target.reset();
+            } else {
+                alert('Пожалуйста, заполните обязательные поля.');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>        </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Можно ли заказать макет этикетки у вас?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Да, наши дизайнеры создадут для вас уникальный макет этикетки с учетом всех требований и пожеланий. Услуга платная, стоимость обсуждается индивидуально.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Какие форматы файлов вы принимаете?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Мы работаем с форматами AI, PDF, EPS, CDR. Для предварительного просмотра можете прислать PNG или JPEG. Наши специалисты помогут подготовить файлы к печати.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Как происходит оплата?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Работаем по безналичному расчету с юридическими лицами и ИП. Возможна предоплата 50% или 100%, обсуждается индивидуально. Все документы предоставляем в полном объеме.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Доставляете ли вы в другие города?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Да, доставляем по всей России. Собственным транспортом доставляем по Красноярскому краю и СФО. В другие регионы отправляем транспортными компаниями.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Что делать, если обнаружен брак?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            У нас брак менее 0.5%, но если вы обнаружили проблему — свяжитесь с менеджером. Мы либо заменим партию бесплатно, либо вернем деньги. Гарантия качества — наш приоритет.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Block #2 - Form with Stats -->
+    <section id="contact-final" class="cta-block-2" style="background:var(--white);">
+        <div class="container">
+            <div class="cta-header">
+                <h2>Готовы начать работу?</h2>
+                <p class="subtitle">350+ компаний уже выбрали Лейбл Групп</p>
+            </div>
+            <div class="cta-content">
+                <div class="cta-stats">
+                    <div class="stat-item-cta">
+                        <div class="stat-header">
+                            <div class="stat-num">11</div>
+                            <div class="stat-lbl">ЛЕТ</div>
+                        </div>
+                        <div class="stat-desc">Безупречной работы на рынке</div>
+                    </div>
+                    <div class="stat-item-cta">
+                        <div class="stat-header">
+                            <div class="stat-num">350+</div>
+                            <div class="stat-lbl">КЛИЕНТОВ</div>
+                        </div>
+                        <div class="stat-desc">Доверяют нам регулярно</div>
+                    </div>
+                    <div class="stat-item-cta">
+                        <div class="stat-header">
+                            <div class="stat-num">0.5%</div>
+                            <div class="stat-lbl">БРАКА</div>
+                        </div>
+                        <div class="stat-desc">Максимальное качество</div>
+                    </div>
+                </div>
+                <div class="form-container">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Ваше имя *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Компания</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Телефон *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Сообщение</label>
+                            <textarea id="message" name="message" placeholder="Опишите вашу задачу"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg">ОТПРАВИТЬ</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    
+    <footer>
+        <div class="container">
+            <p><strong>Лейбл Групп</strong> — типография полного цикла</p>
+            <p>📍 Красноярск, ул. Производственная, 1</p>
+            <p>📞 +7 (900) 123-45-67</p>
+            <p>✉️ info@labelgroup.ru</p>
+            <p style="margin-top: 30px; opacity: 0.7;">&copy; 2025 Лейбл Групп. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Gallery Tabs
+        document.querySelectorAll('.gallery-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const category = tab.dataset.category;
+                
+                // Update active tab
+                document.querySelectorAll('.gallery-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Update active content
+                document.querySelectorAll('.gallery-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                document.getElementById(category).classList.add('active');
+            });
+        });
+
+        // Gallery Lightbox
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const title = item.dataset.title;
+                const lightbox = document.getElementById('lightbox');
+                const lightboxContent = document.getElementById('lightbox-content');
+                
+                lightboxContent.innerHTML = `<h2 style="color: var(--text-heading); margin-bottom: 20px;">${title}</h2><div style="font-size: 1.2rem; color: var(--text-dark);">Изображение продукции</div>`;
+                lightbox.classList.add('active');
+            });
+        });
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        // Close lightbox on background click
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') {
+                closeLightbox();
+            }
+        });
+
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            
+            if (name && phone) {
+                alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.');
+                e.target.reset();
+            } else {
+                alert('Пожалуйста, заполните обязательные поля.');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
