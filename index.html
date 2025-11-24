@@ -602,10 +602,12 @@
 
         .gallery-item {
             position: relative;
-            height: 250px;
+            height: auto;
             overflow: hidden;
             cursor: pointer;
             border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
         }
 
         .gallery-placeholder {
@@ -1064,8 +1066,9 @@
     
     <section class="hero" style="padding-top:80px;">
         <div class="container">
-            <h1>Лейбл Групп — типография полного цикла</h1>
-            <p>Этикетки, упаковка, маркировка Честный знак за 3-5 дней. Собственное производство 1500 м²</p>
+            <p style="font-size: 0.95rem; color: #777777; margin-bottom: 15px; font-weight: 400;">Лейбл Групп - типография полного цикла</p>
+            <h1>Качественная печать в Барнауле за 3-4 дней и скидкой 10% на первый заказ</h1>
+            <p>Этикетки, упаковка, маркировка Честный знак. Собственное производство 1500 м²</p>
             <div class="hero-cta">
                 <a href="#services" class="btn btn-primary">Заказать печать</a>
                 <a href="#contact-final" class="btn btn-secondary">Получить консультацию</a>
@@ -1076,7 +1079,7 @@
     <!-- Problems Section -->
     <section id="problems" class="problems" style="background:var(--bg-light);">
         <div class="container">
-            <h2 class="section-title">С чем сталкиваются наши клиенты?</h2>
+            <h2 class="section-title">А вы сталкивались с такими ситуациями?</h2>
             <div class="problems-grid">
                 <div class="problem-card">
                     <div class="problem-icon">🕐</div>
@@ -1321,7 +1324,7 @@
     <!-- Equipment Section -->
     <section id="equipment" class="equipment" style="background:var(--white);">
         <div class="container">
-            <h2 class="section-title">На что печатаем: современное оборудование</h2>
+            <h2 class="section-title">На чем печатаем: современное оборудование</h2>
             <div class="equipment-grid">
                 <div class="equipment-card">
                     <div class="equipment-icon">⚙️</div>
@@ -1366,19 +1369,44 @@
             <div class="gallery-content active" id="etiketi">
                 <div class="gallery-grid">
                     <div class="gallery-item" data-title="Этикетка молока - Простокваша">
-                        <div class="gallery-placeholder">[Этикетка молока - Простокваша]</div>
+                        <div style="padding: 15px; background: var(--white); border-bottom: 1px solid var(--border-color);">
+                            <div style="font-weight: 500; color: var(--text-heading); margin-bottom: 8px;">Этикетка молока - Простокваша</div>
+                            <div style="font-size: 13px; color: #555555; margin-bottom: 3px;">Сроки: 3-5 дней</div>
+                            <div style="font-size: 13px; color: #555555;">Стоимость: от 2500₽</div>
+                        </div>
+                        <div class="gallery-placeholder" style="height: 150px;">[Этикетка молока - Простокваша]</div>
                     </div>
                     <div class="gallery-item" data-title="Этикетка энергетика - RedBull">
-                        <div class="gallery-placeholder">[Этикетка энергетика - RedBull]</div>
+                        <div style="padding: 15px; background: var(--white); border-bottom: 1px solid var(--border-color);">
+                            <div style="font-weight: 500; color: var(--text-heading); margin-bottom: 8px;">Этикетка энергетика - RedBull</div>
+                            <div style="font-size: 13px; color: #555555; margin-bottom: 3px;">Сроки: 3-5 дней</div>
+                            <div style="font-size: 13px; color: #555555;">Стоимость: от 2500₽</div>
+                        </div>
+                        <div class="gallery-placeholder" style="height: 150px;">[Этикетка энергетика - RedBull]</div>
                     </div>
                     <div class="gallery-item" data-title="Этикетка косметики - шампунь">
-                        <div class="gallery-placeholder">[Этикетка косметики - шампунь]</div>
+                        <div style="padding: 15px; background: var(--white); border-bottom: 1px solid var(--border-color);">
+                            <div style="font-weight: 500; color: var(--text-heading); margin-bottom: 8px;">Этикетка косметики - шампунь</div>
+                            <div style="font-size: 13px; color: #555555; margin-bottom: 3px;">Сроки: 4-6 дней</div>
+                            <div style="font-size: 13px; color: #555555;">Стоимость: от 3000₽</div>
+                        </div>
+                        <div class="gallery-placeholder" style="height: 150px;">[Этикетка косметики - шампунь]</div>
                     </div>
                     <div class="gallery-item" data-title="Этикетка парфюма - роль-он">
-                        <div class="gallery-placeholder">[Этикетка парфюма - роль-он]</div>
+                        <div style="padding: 15px; background: var(--white); border-bottom: 1px solid var(--border-color);">
+                            <div style="font-weight: 500; color: var(--text-heading); margin-bottom: 8px;">Этикетка парфюма - роль-он</div>
+                            <div style="font-size: 13px; color: #555555; margin-bottom: 3px;">Сроки: 2-4 дня</div>
+                            <div style="font-size: 13px; color: #555555;">Стоимость: от 1800₽</div>
+                        </div>
+                        <div class="gallery-placeholder" style="height: 150px;">[Этикетка парфюма - роль-он]</div>
                     </div>
                     <div class="gallery-item" data-title="Этикетка в рулоне - 10000 шт">
-                        <div class="gallery-placeholder">[Этикетка в рулоне - 10000 шт]</div>
+                        <div style="padding: 15px; background: var(--white); border-bottom: 1px solid var(--border-color);">
+                            <div style="font-weight: 500; color: var(--text-heading); margin-bottom: 8px;">Этикетка в рулоне - 10000 шт</div>
+                            <div style="font-size: 13px; color: #555555; margin-bottom: 3px;">Сроки: 5-7 дней</div>
+                            <div style="font-size: 13px; color: #555555;">Стоимость: от 5000₽</div>
+                        </div>
+                        <div class="gallery-placeholder" style="height: 150px;">[Этикетка в рулоне - 10000 шт]</div>
                     </div>
                 </div>
             </div>
@@ -1386,19 +1414,44 @@
             <div class="gallery-content" id="upakovka">
                 <div class="gallery-grid">
                     <div class="gallery-item" data-title="Коробка электроники - Amazon">
-                        <div class="gallery-placeholder">[Коробка электроники - Amazon]</div>
+                        <div style="padding: 15px; background: var(--white); border-bottom: 1px solid var(--border-color);">
+                            <div style="font-weight: 500; color: var(--text-heading); margin-bottom: 8px;">Коробка электроники - Amazon</div>
+                            <div style="font-size: 13px; color: #555555; margin-bottom: 3px;">Сроки: 5-7 дней</div>
+                            <div style="font-size: 13px; color: #555555;">Стоимость: от 3500₽</div>
+                        </div>
+                        <div class="gallery-placeholder" style="height: 150px;">[Коробка электроники - Amazon]</div>
                     </div>
                     <div class="gallery-item" data-title="Пакет с застежкой - кофе">
-                        <div class="gallery-placeholder">[Пакет с застежкой - кофе]</div>
+                        <div style="padding: 15px; background: var(--white); border-bottom: 1px solid var(--border-color);">
+                            <div style="font-weight: 500; color: var(--text-heading); margin-bottom: 8px;">Пакет с застежкой - кофе</div>
+                            <div style="font-size: 13px; color: #555555; margin-bottom: 3px;">Сроки: 4-6 дней</div>
+                            <div style="font-size: 13px; color: #555555;">Стоимость: от 2800₽</div>
+                        </div>
+                        <div class="gallery-placeholder" style="height: 150px;">[Пакет с застежкой - кофе]</div>
                     </div>
                     <div class="gallery-item" data-title="Ламинированная упаковка - игрушки">
-                        <div class="gallery-placeholder">[Ламинированная упаковка - игрушки]</div>
+                        <div style="padding: 15px; background: var(--white); border-bottom: 1px solid var(--border-color);">
+                            <div style="font-weight: 500; color: var(--text-heading); margin-bottom: 8px;">Ламинированная упаковка - игрушки</div>
+                            <div style="font-size: 13px; color: #555555; margin-bottom: 3px;">Сроки: 6-8 дней</div>
+                            <div style="font-size: 13px; color: #555555;">Стоимость: от 4200₽</div>
+                        </div>
+                        <div class="gallery-placeholder" style="height: 150px;">[Ламинированная упаковка - игрушки]</div>
                     </div>
                     <div class="gallery-item" data-title="Гофрокартон - посылка">
-                        <div class="gallery-placeholder">[Гофрокартон - посылка]</div>
+                        <div style="padding: 15px; background: var(--white); border-bottom: 1px solid var(--border-color);">
+                            <div style="font-weight: 500; color: var(--text-heading); margin-bottom: 8px;">Гофрокартон - посылка</div>
+                            <div style="font-size: 13px; color: #555555; margin-bottom: 3px;">Сроки: 4-6 дней</div>
+                            <div style="font-size: 13px; color: #555555;">Стоимость: от 3200₽</div>
+                        </div>
+                        <div class="gallery-placeholder" style="height: 150px;">[Гофрокартон - посылка]</div>
                     </div>
                     <div class="gallery-item" data-title="Фольга серебро - конфеты">
-                        <div class="gallery-placeholder">[Фольга серебро - конфеты]</div>
+                        <div style="padding: 15px; background: var(--white); border-bottom: 1px solid var(--border-color);">
+                            <div style="font-weight: 500; color: var(--text-heading); margin-bottom: 8px;">Фольга серебро - конфеты</div>
+                            <div style="font-size: 13px; color: #555555; margin-bottom: 3px;">Сроки: 3-5 дней</div>
+                            <div style="font-size: 13px; color: #555555;">Стоимость: от 2200₽</div>
+                        </div>
+                        <div class="gallery-placeholder" style="height: 150px;">[Фольга серебро - конфеты]</div>
                     </div>
                 </div>
             </div>
@@ -1406,19 +1459,44 @@
             <div class="gallery-content" id="markirovka">
                 <div class="gallery-grid">
                     <div class="gallery-item" data-title="DataMatrix код - таблетки">
-                        <div class="gallery-placeholder">[DataMatrix код - таблетки]</div>
+                        <div style="padding: 15px; background: var(--white); border-bottom: 1px solid var(--border-color);">
+                            <div style="font-weight: 500; color: var(--text-heading); margin-bottom: 8px;">DataMatrix код - таблетки</div>
+                            <div style="font-size: 13px; color: #555555; margin-bottom: 3px;">Сроки: 5-7 дней</div>
+                            <div style="font-size: 13px; color: #555555;">Стоимость: от 4200₽</div>
+                        </div>
+                        <div class="gallery-placeholder" style="height: 150px;">[DataMatrix код - таблетки]</div>
                     </div>
                     <div class="gallery-item" data-title="QR код - лекарство">
-                        <div class="gallery-placeholder">[QR код - лекарство]</div>
+                        <div style="padding: 15px; background: var(--white); border-bottom: 1px solid var(--border-color);">
+                            <div style="font-weight: 500; color: var(--text-heading); margin-bottom: 8px;">QR код - лекарство</div>
+                            <div style="font-size: 13px; color: #555555; margin-bottom: 3px;">Сроки: 5-7 дней</div>
+                            <div style="font-size: 13px; color: #555555;">Стоимость: от 4500₽</div>
+                        </div>
+                        <div class="gallery-placeholder" style="height: 150px;">[QR код - лекарство]</div>
                     </div>
                     <div class="gallery-item" data-title="Защитный код - парфюм">
-                        <div class="gallery-placeholder">[Защитный код - парфюм]</div>
+                        <div style="padding: 15px; background: var(--white); border-bottom: 1px solid var(--border-color);">
+                            <div style="font-weight: 500; color: var(--text-heading); margin-bottom: 8px;">Защитный код - парфюм</div>
+                            <div style="font-size: 13px; color: #555555; margin-bottom: 3px;">Сроки: 6-8 дней</div>
+                            <div style="font-size: 13px; color: #555555;">Стоимость: от 5000₽</div>
+                        </div>
+                        <div class="gallery-placeholder" style="height: 150px;">[Защитный код - парфюм]</div>
                     </div>
                     <div class="gallery-item" data-title="Голограмма + код - элитные часы">
-                        <div class="gallery-placeholder">[Голограмма + код - элитные часы]</div>
+                        <div style="padding: 15px; background: var(--white); border-bottom: 1px solid var(--border-color);">
+                            <div style="font-weight: 500; color: var(--text-heading); margin-bottom: 8px;">Голограмма + код - элитные часы</div>
+                            <div style="font-size: 13px; color: #555555; margin-bottom: 3px;">Сроки: 7-9 дней</div>
+                            <div style="font-size: 13px; color: #555555;">Стоимость: от 6500₽</div>
+                        </div>
+                        <div class="gallery-placeholder" style="height: 150px;">[Голограмма + код - элитные часы]</div>
                     </div>
                     <div class="gallery-item" data-title="Объемный код на фольге - бижутерия">
-                        <div class="gallery-placeholder">[Объемный код на фольге - бижутерия]</div>
+                        <div style="padding: 15px; background: var(--white); border-bottom: 1px solid var(--border-color);">
+                            <div style="font-weight: 500; color: var(--text-heading); margin-bottom: 8px;">Объемный код на фольге - бижутерия</div>
+                            <div style="font-size: 13px; color: #555555; margin-bottom: 3px;">Сроки: 6-8 дней</div>
+                            <div style="font-size: 13px; color: #555555;">Стоимость: от 5200₽</div>
+                        </div>
+                        <div class="gallery-placeholder" style="height: 150px;">[Объемный код на фольге - бижутерия]</div>
                     </div>
                 </div>
             </div>
@@ -1426,16 +1504,36 @@
             <div class="gallery-content" id="rasxodniki">
                 <div class="gallery-grid">
                     <div class="gallery-item" data-title="Рулон ленты - красная">
-                        <div class="gallery-placeholder">[Рулон ленты - красная]</div>
+                        <div style="padding: 15px; background: var(--white); border-bottom: 1px solid var(--border-color);">
+                            <div style="font-weight: 500; color: var(--text-heading); margin-bottom: 8px;">Рулон ленты - красная</div>
+                            <div style="font-size: 13px; color: #555555; margin-bottom: 3px;">Сроки: 1-2 дня</div>
+                            <div style="font-size: 13px; color: #555555;">Стоимость: от 1200₽</div>
+                        </div>
+                        <div class="gallery-placeholder" style="height: 150px;">[Рулон ленты - красная]</div>
                     </div>
                     <div class="gallery-item" data-title="Рулон ленты - черная">
-                        <div class="gallery-placeholder">[Рулон ленты - черная]</div>
+                        <div style="padding: 15px; background: var(--white); border-bottom: 1px solid var(--border-color);">
+                            <div style="font-weight: 500; color: var(--text-heading); margin-bottom: 8px;">Рулон ленты - черная</div>
+                            <div style="font-size: 13px; color: #555555; margin-bottom: 3px;">Сроки: 1-2 дня</div>
+                            <div style="font-size: 13px; color: #555555;">Стоимость: от 1200₽</div>
+                        </div>
+                        <div class="gallery-placeholder" style="height: 150px;">[Рулон ленты - черная]</div>
                     </div>
                     <div class="gallery-item" data-title="Риббон восковой - рулон">
-                        <div class="gallery-placeholder">[Риббон восковой - рулон]</div>
+                        <div style="padding: 15px; background: var(--white); border-bottom: 1px solid var(--border-color);">
+                            <div style="font-weight: 500; color: var(--text-heading); margin-bottom: 8px;">Риббон восковой - рулон</div>
+                            <div style="font-size: 13px; color: #555555; margin-bottom: 3px;">Сроки: 2-3 дня</div>
+                            <div style="font-size: 13px; color: #555555;">Стоимость: от 1500₽</div>
+                        </div>
+                        <div class="gallery-placeholder" style="height: 150px;">[Риббон восковой - рулон]</div>
                     </div>
                     <div class="gallery-item" data-title="Этикеточная бумага - рулон">
-                        <div class="gallery-placeholder">[Этикеточная бумага - рулон]</div>
+                        <div style="padding: 15px; background: var(--white); border-bottom: 1px solid var(--border-color);">
+                            <div style="font-weight: 500; color: var(--text-heading); margin-bottom: 8px;">Этикеточная бумага - рулон</div>
+                            <div style="font-size: 13px; color: #555555; margin-bottom: 3px;">Сроки: 2-3 дня</div>
+                            <div style="font-size: 13px; color: #555555;">Стоимость: от 800₽</div>
+                        </div>
+                        <div class="gallery-placeholder" style="height: 150px;">[Этикеточная бумага - рулон]</div>
                     </div>
                 </div>
             </div>
@@ -1717,108 +1815,7 @@
         });
     </script>
 </body>
-</html>        </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Можно ли заказать макет этикетки у вас?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Да, наши дизайнеры создадут для вас уникальный макет этикетки с учетом всех требований и пожеланий. Услуга платная, стоимость обсуждается индивидуально.
-                        </div>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Какие форматы файлов вы принимаете?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Мы работаем с форматами AI, PDF, EPS, CDR. Для предварительного просмотра можете прислать PNG или JPEG. Наши специалисты помогут подготовить файлы к печати.
-                        </div>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Как происходит оплата?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Работаем по безналичному расчету с юридическими лицами и ИП. Возможна предоплата 50% или 100%, обсуждается индивидуально. Все документы предоставляем в полном объеме.
-                        </div>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Доставляете ли вы в другие города?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Да, доставляем по всей России. Собственным транспортом доставляем по Красноярскому краю и СФО. В другие регионы отправляем транспортными компаниями.
-                        </div>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Что делать, если обнаружен брак?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            У нас брак менее 0.5%, но если вы обнаружили проблему — свяжитесь с менеджером. Мы либо заменим партию бесплатно, либо вернем деньги. Гарантия качества — наш приоритет.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Block #2 - Form with Stats -->
-    <section id="contact-final" class="cta-block-2" style="background:var(--white);">
-        <div class="container">
-            <div class="cta-header">
-                <h2>Готовы начать работу?</h2>
-                <p class="subtitle">350+ компаний уже выбрали Лейбл Групп</p>
-            </div>
-            <div class="cta-content">
-                <div class="cta-stats">
-                    <div class="stat-item-cta">
-                        <div class="stat-header">
-                            <div class="stat-num">11</div>
-                            <div class="stat-lbl">ЛЕТ</div>
-                        </div>
-                        <div class="stat-desc">Безупречной работы на рынке</div>
-                    </div>
-                    <div class="stat-item-cta">
-                        <div class="stat-header">
-                            <div class="stat-num">350+</div>
-                            <div class="stat-lbl">КЛИЕНТОВ</div>
-                        </div>
-                        <div class="stat-desc">Доверяют нам регулярно</div>
-                    </div>
-                    <div class="stat-item-cta">
-                        <div class="stat-header">
-                            <div class="stat-num">0.5%</div>
-                            <div class="stat-lbl">БРАКА</div>
-                        </div>
-                        <div class="stat-desc">Максимальное качество</div>
-                    </div>
-                </div>
-                <div class="form-container">
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <label for="name">Ваше имя *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="company">Компания</label>
-                            <input type="text" id="company" name="company">
-                        </div>
+</html>               </div>
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" id="email" name="email">
@@ -1831,7 +1828,7 @@
                             <label for="message">Сообщение</label>
                             <textarea id="message" name="message" placeholder="Опишите вашу задачу"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-lg">ОТПРАВИТЬ</button>
+                        <button type="button" class="btn btn-primary btn-lg btn-open-modal" data-modal="modal-final">ОТПРАВИТЬ</button>
                     </form>
                 </div>
             </div>
@@ -1850,7 +1847,285 @@
         </div>
     </footer>
 
+    <!-- Modal: Call -->
+    <div class="modal-overlay" id="modal-call">
+        <div class="modal-container">
+            <button class="modal-close" onclick="closeModal('modal-call')">&times;</button>
+            <div class="modal-header">
+                <h2 class="modal-title">Позвоните нам прямо сейчас</h2>
+                <p class="modal-utp">Менеджер ответит за 2 минуты</p>
+            </div>
+            <div class="modal-phone">
+                <a href="tel:+79061234567">☎️ +7 (906) 123-45-67</a>
+            </div>
+            <div class="modal-body">
+                <form class="modal-form" onsubmit="return handleModalSubmit(event, 'modal-call')">
+                    <div class="form-group">
+                        <label for="call-name">Ваше имя *</label>
+                        <input type="text" id="call-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="call-phone">Ваш телефон *</label>
+                        <input type="tel" id="call-phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+                    </div>
+                    <button type="submit" class="btn">Перезвонить мне</button>
+                </form>
+            </div>
+            <div class="modal-success" id="modal-call-success">
+                <h3>✅ Спасибо за заявку!</h3>
+                <p>Мы перезвоним вам в течение 2 минут</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Consultation -->
+    <div class="modal-overlay" id="modal-consultation">
+        <div class="modal-container">
+            <button class="modal-close" onclick="closeModal('modal-consultation')">&times;</button>
+            <div class="modal-header">
+                <h2 class="modal-title">Нужна консультация?</h2>
+                <p class="modal-utp">Определим лучшее решение за 15 минут</p>
+            </div>
+            <div class="modal-body">
+                <form class="modal-form" onsubmit="return handleModalSubmit(event, 'modal-consultation')">
+                    <div class="form-group">
+                        <label for="cons-name">Ваше имя *</label>
+                        <input type="text" id="cons-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cons-company">Компания</label>
+                        <input type="text" id="cons-company" name="company">
+                    </div>
+                    <div class="form-group">
+                        <label for="cons-email">Email *</label>
+                        <input type="email" id="cons-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cons-phone">Телефон *</label>
+                        <input type="tel" id="cons-phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cons-type">Тип продукции</label>
+                        <select id="cons-type" name="product_type">
+                            <option value="">Выберите тип</option>
+                            <option value="Этикетки">Этикетки</option>
+                            <option value="Упаковка">Упаковка</option>
+                            <option value="Маркировка">Маркировка</option>
+                            <option value="Расходники">Расходники</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cons-volume">Объем (например: 5000 шт)</label>
+                        <input type="text" id="cons-volume" name="volume" placeholder="5000 шт">
+                    </div>
+                    <div class="form-group">
+                        <label for="cons-comment">Комментарий</label>
+                        <textarea id="cons-comment" name="comment"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Отправить</button>
+                </form>
+            </div>
+            <div class="modal-success" id="modal-consultation-success">
+                <h3>✅ Заявка отправлена!</h3>
+                <p>Мы свяжемся с вами в течение 15 минут для консультации</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Order Service -->
+    <div class="modal-overlay" id="modal-order">
+        <div class="modal-container">
+            <button class="modal-close" onclick="closeModal('modal-order')">&times;</button>
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-order-title">Заказ услуги</h2>
+                <p class="modal-utp">Начало работы за 24 часа</p>
+            </div>
+            <div class="modal-info" id="modal-order-price"></div>
+            <div class="modal-body">
+                <form class="modal-form" onsubmit="return handleModalSubmit(event, 'modal-order')">
+                    <div class="form-group">
+                        <label for="order-name">Ваше имя *</label>
+                        <input type="text" id="order-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="order-company">Компания</label>
+                        <input type="text" id="order-company" name="company">
+                    </div>
+                    <div class="form-group">
+                        <label for="order-email">Email *</label>
+                        <input type="email" id="order-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="order-phone">Телефон *</label>
+                        <input type="tel" id="order-phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="order-volume">Объем</label>
+                        <input type="text" id="order-volume" name="volume" placeholder="5000 шт">
+                    </div>
+                    <div class="form-group">
+                        <label for="order-description">Описание задачи</label>
+                        <textarea id="order-description" name="description"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Заказать</button>
+                </form>
+            </div>
+            <div class="modal-success" id="modal-order-success">
+                <h3>✅ Заказ принят!</h3>
+                <p>Мы начнем работу в течение 24 часов. Менеджер свяжется с вами для уточнения деталей</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Final Order -->
+    <div class="modal-overlay" id="modal-final">
+        <div class="modal-container">
+            <button class="modal-close" onclick="closeModal('modal-final')">&times;</button>
+            <div class="modal-header">
+                <h2 class="modal-title">Готовы начать?</h2>
+                <p class="modal-utp">350+ компаний уже работают с Лейбл Групп</p>
+            </div>
+            <div class="modal-body">
+                <form class="modal-form" onsubmit="return handleModalSubmit(event, 'modal-final')">
+                    <div class="form-group">
+                        <label for="final-name">Ваше имя *</label>
+                        <input type="text" id="final-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="final-company">Компания *</label>
+                        <input type="text" id="final-company" name="company" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="final-email">Email *</label>
+                        <input type="email" id="final-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="final-phone">Телефон *</label>
+                        <input type="tel" id="final-phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="final-message">Сообщение</label>
+                        <textarea id="final-message" name="message"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Отправить заявку</button>
+                </form>
+            </div>
+            <div class="modal-success" id="modal-final-success">
+                <h3>✅ Заявка отправлена!</h3>
+                <p>Спасибо за интерес к Лейбл Групп! Мы свяжемся с вами в ближайшее время</p>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // Modal Functions
+        function openModal(modalId, serviceName, servicePrice) {
+            const modal = document.getElementById(modalId);
+            if (!modal) return;
+            
+            // Reset modal to form view
+            const form = modal.querySelector('.modal-form');
+            const success = modal.querySelector('.modal-success');
+            if (form) form.style.display = 'block';
+            if (success) success.classList.remove('active');
+            
+            // Update dynamic content for order modal
+            if (modalId === 'modal-order' && serviceName) {
+                document.getElementById('modal-order-title').textContent = 'Заказ услуги: ' + serviceName;
+                document.getElementById('modal-order-price').textContent = 'Стоимость: от ' + servicePrice;
+            }
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (!modal) return;
+            
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            
+            // Reset form after animation
+            setTimeout(() => {
+                const form = modal.querySelector('.modal-form');
+                if (form) {
+                    form.reset();
+                    form.style.display = 'block';
+                }
+                const success = modal.querySelector('.modal-success');
+                if (success) success.classList.remove('active');
+            }, 300);
+        }
+        
+        function handleModalSubmit(event, modalId) {
+            event.preventDefault();
+            
+            const modal = document.getElementById(modalId);
+            const form = modal.querySelector('.modal-form');
+            const success = modal.querySelector('.modal-success');
+            
+            // Validate required fields
+            const requiredInputs = form.querySelectorAll('[required]');
+            let isValid = true;
+            requiredInputs.forEach(input => {
+                if (!input.value.trim()) {
+                    isValid = false;
+                    input.style.borderColor = '#ff0000';
+                } else {
+                    input.style.borderColor = '#e0e0e0';
+                }
+            });
+            
+            if (!isValid) {
+                alert('Пожалуйста, заполните все обязательные поля');
+                return false;
+            }
+            
+            // Show success message
+            form.style.display = 'none';
+            success.classList.add('active');
+            
+            // Auto close after 3 seconds
+            setTimeout(() => {
+                closeModal(modalId);
+            }, 3000);
+            
+            return false;
+        }
+        
+        // Modal trigger buttons
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('btn-open-modal') || 
+                e.target.closest('.btn-open-modal')) {
+                e.preventDefault();
+                const trigger = e.target.classList.contains('btn-open-modal') ? 
+                    e.target : e.target.closest('.btn-open-modal');
+                const modalId = trigger.getAttribute('data-modal');
+                const serviceName = trigger.getAttribute('data-service');
+                const servicePrice = trigger.getAttribute('data-price');
+                openModal(modalId, serviceName, servicePrice);
+            }
+        });
+        
+        // Close modal on overlay click
+        document.querySelectorAll('.modal-overlay').forEach(overlay => {
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay) {
+                    closeModal(overlay.id);
+                }
+            });
+        });
+        
+        // Close modal on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay.active').forEach(modal => {
+                    closeModal(modal.id);
+                });
+            }
+        });
+
         // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
