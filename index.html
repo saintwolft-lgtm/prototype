@@ -1079,7 +1079,48 @@
 .modal-close:hover {
   color: #333;
 }
-    </style>
+    
+    
+/* Convert CTA blocks to modals */
+#contact-mid, #contact-final {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: var(--white);
+  width: 90%;
+  max-width: 700px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  z-index: 999;
+  transition: transform 0.3s ease;
+  display: none;
+}
+
+#contact-mid.modal-active, #contact-final.modal-active {
+  display: block;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-overlay-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 998;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay-bg.active {
+  display: block;
+  opacity: 1;
+}</style>
 </head>
 <body>
     <!-- Fixed Top Menu -->
@@ -2259,5 +2300,51 @@
             });
         });
     </script>
+
+// Footer forms as modals
+const modalBg = document.createElement('div');
+modalBg.className = 'modal-overlay-bg';
+document.body.appendChild(modalBg);
+
+function openFooterModal(modalId) {
+  const modal = document.getElementById(modalId);
+  if (modal) {
+    modal.classList.add('modal-active');
+    modalBg.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeFooterModal(modalId) {
+  const modal = document.getElementById(modalId);
+  if (modal) {
+    modal.classList.remove('modal-active');
+    modalBg.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+}
+
+// Click overlay to close
+modalBg.addEventListener('click', function() {
+  document.getElementById('contact-mid')?.classList.remove('modal-active');
+  document.getElementById('contact-final')?.classList.remove('modal-active');
+  this.classList.remove('active');
+  document.body.style.overflow = 'auto';
+});
+
+// Add close buttons to modals
+document.addEventListener('DOMContentLoaded', function() {
+  ['contact-mid', 'contact-final'].forEach(id => {
+    const modal = document.getElementById(id);
+    if (modal && modal.querySelector('.cta-header')) {
+      const closeBtn = document.createElement('button');
+      closeBtn.innerHTML = '×';
+      closeBtn.style.cssText = 'position: absolute; top: 15px; right: 20px; font-size: 32px; background: none; border: none; cursor: pointer; color: #555; line-height: 1; padding: 0; width: 30px; height: 30px;';
+      closeBtn.onclick = () => closeFooterModal(id);
+      modal.style.position = 'relative';
+      modal.querySelector('.cta-header').appendChild(closeBtn);
+    }
+  });
+});
 </body>
 </html>
