@@ -930,6 +930,183 @@
             scroll-behavior: smooth;
         }
 
+        /* Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+        }
+
+        .modal-container {
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-container {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border: none;
+            font-size: 24px;
+            color: #777777;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--text-heading);
+        }
+
+        .modal-header {
+            padding: 30px 30px 15px;
+        }
+
+        .modal-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-heading);
+            margin-bottom: 8px;
+        }
+
+        .modal-utp {
+            font-size: 14px;
+            color: #777777;
+            margin-bottom: 0;
+        }
+
+        .modal-phone {
+            padding: 0 30px 15px;
+        }
+
+        .modal-phone a {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-heading);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .modal-phone a:hover {
+            color: var(--primary-color);
+        }
+
+        .modal-info {
+            padding: 0 30px 15px;
+            font-size: 16px;
+            color: var(--text-dark);
+        }
+
+        .modal-body {
+            padding: 15px 30px 30px;
+        }
+
+        .modal-form .form-group {
+            margin-bottom: 15px;
+        }
+
+        .modal-form .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--text-heading);
+        }
+
+        .modal-form .form-group input,
+        .modal-form .form-group textarea,
+        .modal-form .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-dark);
+            background: var(--white);
+        }
+
+        .modal-form .form-group input:focus,
+        .modal-form .form-group textarea:focus,
+        .modal-form .form-group select:focus {
+            outline: none;
+            border-color: var(--text-heading);
+        }
+
+        .modal-form .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .modal-form .btn {
+            width: 100%;
+            padding: 12px 24px;
+            background: var(--text-heading);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .modal-form .btn:hover {
+            background: #000;
+        }
+
+        .modal-success {
+            display: none;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .modal-success.active {
+            display: block;
+        }
+
+        .modal-success h3 {
+            font-size: 22px;
+            color: var(--text-heading);
+            margin-bottom: 10px;
+        }
+
+        .modal-success p {
+            font-size: 16px;
+            color: var(--text-dark);
+        }
+
         /* Responsive */
         @media (max-width: 1200px) {
             .menu-right {
@@ -1044,6 +1221,8 @@
                     <a href="#services">Услуги</a>
                     <a href="#cases">Портфолио</a>
                     <a href="#stats">О компании</a>
+                    <a href="#" class="btn-open-modal" data-modal="modal-call">Позвонить</a>
+                    <a href="#" class="btn-open-modal" data-modal="modal-consultation">Заполнить форму</a>
                 </nav>
             </div>
             <div class="menu-right">
@@ -1140,7 +1319,7 @@
                     <p>Рулоны, разные форматы, флексопечать, яркие цвета</p>
                     <div class="service-price">Стоимость от: 2500₽</div>
                     <div class="service-time">⏱️ Сроки печати: 3-5 дней</div>
-                    <a href="#contact-final" class="btn btn-primary">Заказать от 2500₽</a>
+                    <a href="#" class="btn btn-primary btn-open-modal" data-modal="modal-order" data-service="Самоклеящиеся этикетки" data-price="2500₽">Заказать от 2500₽</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">📄</div>
@@ -1148,7 +1327,7 @@
                     <p>Быстрая цифровая печать, этикеточная бумага</p>
                     <div class="service-price">Стоимость от: 1800₽</div>
                     <div class="service-time">⏱️ Сроки печати: 2-4 дня</div>
-                    <a href="#contact-final" class="btn btn-primary">Заказать от 1800₽</a>
+                    <a href="#" class="btn btn-primary btn-open-modal" data-modal="modal-order" data-service="Бесклеевые этикетки" data-price="1800₽">Заказать от 1800₽</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🎁</div>
@@ -1156,7 +1335,7 @@
                     <p>Пленки, бумаги, фольга, полный спектр</p>
                     <div class="service-price">Стоимость от: 3500₽</div>
                     <div class="service-time">⏱️ Сроки печати: 4-6 дней</div>
-                    <a href="#contact-final" class="btn btn-primary">Заказать от 3500₽</a>
+                    <a href="#" class="btn btn-primary btn-open-modal" data-modal="modal-order" data-service="Упаковка" data-price="3500₽">Заказать от 3500₽</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🏷️</div>
@@ -1164,7 +1343,7 @@
                     <p>DataMatrix коды высочайшего качества</p>
                     <div class="service-price">Стоимость от: 4200₽</div>
                     <div class="service-time">⏱️ Сроки печати: 5-7 дней</div>
-                    <a href="#contact-final" class="btn btn-primary">Заказать от 4200₽</a>
+                    <a href="#" class="btn btn-primary btn-open-modal" data-modal="modal-order" data-service="Маркировка Честный знак" data-price="4200₽">Заказать от 4200₽</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🔌</div>
@@ -1172,7 +1351,7 @@
                     <p>Термотрансферные ленты, риббоны</p>
                     <div class="service-price">Стоимость от: 1200₽</div>
                     <div class="service-time">⏱️ Сроки печати: 1-2 дня</div>
-                    <a href="#contact-final" class="btn btn-primary">Заказать от 1200₽</a>
+                    <a href="#" class="btn btn-primary btn-open-modal" data-modal="modal-order" data-service="Расходники" data-price="1200₽">Заказать от 1200₽</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🖨️</div>
@@ -1180,7 +1359,7 @@
                     <p>Продаем и консультируем</p>
                     <div class="service-price">Консультация бесплатно</div>
                     <div class="service-time">⏱️ Сроки: По договору</div>
-                    <a href="#contact-final" class="btn btn-primary">Получить консультацию</a>
+                    <a href="#" class="btn btn-primary btn-open-modal" data-modal="modal-consultation">Получить консультацию</a>
                 </div>
             </div>
         </div>
@@ -1573,8 +1752,8 @@
                     </div>
                 </div>
                 <div class="cta-actions">
-                    <a href="tel:+79001234567" class="btn btn-primary">Позвонить</a>
-                    <a href="#contact-final" class="btn btn-secondary">Заполнить форму</a>
+                    <a href="#" class="btn btn-primary btn-open-modal" data-modal="modal-call">Позвонить</a>
+                    <a href="#" class="btn btn-secondary btn-open-modal" data-modal="modal-consultation">Заполнить форму</a>
                 </div>
             </div>
         </div>
@@ -1636,7 +1815,7 @@
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            Да, доставляем по всей России. Собственным транспортом доставляем по Красноярскому краю и СФО. В другие регионы отправляем транспортными компаниями.
+                            Да, доставляем по всей России. Собственным транспортом доставляем по Алтайскому краю и СФО. В другие регионы отправляем транспортными компаниями.
                         </div>
                     </div>
                 </div>
@@ -1708,126 +1887,6 @@
                             <label for="message">Сообщение</label>
                             <textarea id="message" name="message" placeholder="Опишите вашу задачу"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-lg">ОТПРАВИТЬ</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    
-    <footer>
-        <div class="container">
-            <p><strong>Лейбл Групп</strong> — типография полного цикла</p>
-            <p>📍 Барнаул, ул. Производственная, 1</p>
-            <p>📞 +7 (900) 123-45-67</p>
-            <p>✉️ info@labelgroup.ru</p>
-            <p style="margin-top: 30px; opacity: 0.7;">&copy; 2025 Лейбл Групп. Все права защищены.</p>
-        </div>
-    </footer>
-
-    <script>
-        // FAQ Accordion
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const faqItem = question.parentElement;
-                const isActive = faqItem.classList.contains('active');
-                
-                // Close all FAQ items
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    item.classList.remove('active');
-                });
-                
-                // Open clicked item if it wasn't active
-                if (!isActive) {
-                    faqItem.classList.add('active');
-                }
-            });
-        });
-
-        // Gallery Tabs
-        document.querySelectorAll('.gallery-tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                const category = tab.dataset.category;
-                
-                // Update active tab
-                document.querySelectorAll('.gallery-tab').forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                
-                // Update active content
-                document.querySelectorAll('.gallery-content').forEach(content => {
-                    content.classList.remove('active');
-                });
-                document.getElementById(category).classList.add('active');
-            });
-        });
-
-        // Gallery Lightbox
-        document.querySelectorAll('.gallery-item').forEach(item => {
-            item.addEventListener('click', () => {
-                const title = item.dataset.title;
-                const lightbox = document.getElementById('lightbox');
-                const lightboxContent = document.getElementById('lightbox-content');
-                
-                lightboxContent.innerHTML = `<h2 style="color: var(--text-heading); margin-bottom: 20px;">${title}</h2><div style="font-size: 1.2rem; color: var(--text-dark);">Изображение продукции</div>`;
-                lightbox.classList.add('active');
-            });
-        });
-
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('active');
-        }
-
-        // Close lightbox on background click
-        document.getElementById('lightbox').addEventListener('click', (e) => {
-            if (e.target.id === 'lightbox') {
-                closeLightbox();
-            }
-        });
-
-        // Form submission
-        document.getElementById('contact-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            
-            if (name && phone) {
-                alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.');
-                e.target.reset();
-            } else {
-                alert('Пожалуйста, заполните обязательные поля.');
-            }
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#' && document.querySelector(href)) {
-                    e.preventDefault();
-                    document.querySelector(href).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
-</body>
-</html>               </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Телефон *</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Сообщение</label>
-                            <textarea id="message" name="message" placeholder="Опишите вашу задачу"></textarea>
-                        </div>
                         <button type="button" class="btn btn-primary btn-lg btn-open-modal" data-modal="modal-final">ОТПРАВИТЬ</button>
                     </form>
                 </div>
@@ -1840,7 +1899,7 @@
     <footer>
         <div class="container">
             <p><strong>Лейбл Групп</strong> — типография полного цикла</p>
-            <p>📍 Красноярск, ул. Производственная, 1</p>
+            <p>📍 Барнаул, Алтайский край</p>
             <p>📞 +7 (900) 123-45-67</p>
             <p>✉️ info@labelgroup.ru</p>
             <p style="margin-top: 30px; opacity: 0.7;">&copy; 2025 Лейбл Групп. Все права защищены.</p>
@@ -2211,41 +2270,6 @@
                 }
             });
         });
-        
-  // Modal functionality for CTA buttons
-  document.querySelectorAll('.modal-toggle').forEach(trigger => {
-    trigger.addEventListener('click', function(e) {
-      e.preventDefault();
-      const modalId = this.getAttribute('data-modal');
-      const modal = document.getElementById(modalId);
-      if (modal) {
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-      }
-    });
-  });
-
-  // Close modals
-  document.querySelectorAll('.modal-close').forEach(closeBtn => {
-    closeBtn.addEventListener('click', function() {
-      const modal = this.closest('.modal');
-      if (modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-      }
-    });
-  });
-
-  // Close modal when clicking outside
-  document.querySelectorAll('.modal').forEach(modal => {
-    modal.addEventListener('click', function(e) {
-      if (e.target === this) {
-        this.style.display = 'none';
-        document.body.style.overflow = 'auto';
-      }
-    });
-  });
-
     </script>
 </body>
 </html>
