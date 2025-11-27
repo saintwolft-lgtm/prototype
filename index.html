@@ -930,182 +930,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Modal Styles */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 2000;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
 
-        .modal-overlay.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 1;
-        }
-
-        .modal-container {
-            background: var(--white);
-            border-radius: 8px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-            max-width: 500px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-            transform: scale(0.9);
-            transition: transform 0.3s ease;
-        }
-
-        .modal-overlay.active .modal-container {
-            transform: scale(1);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            width: 30px;
-            height: 30px;
-            background: transparent;
-            border: none;
-            font-size: 24px;
-            color: #777777;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: color 0.3s ease;
-        }
-
-        .modal-close:hover {
-            color: var(--text-heading);
-        }
-
-        .modal-header {
-            padding: 30px 30px 15px;
-        }
-
-        .modal-title {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--text-heading);
-            margin-bottom: 8px;
-        }
-
-        .modal-utp {
-            font-size: 14px;
-            color: #777777;
-            margin-bottom: 0;
-        }
-
-        .modal-phone {
-            padding: 0 30px 15px;
-        }
-
-        .modal-phone a {
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--text-heading);
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .modal-phone a:hover {
-            color: var(--primary-color);
-        }
-
-        .modal-info {
-            padding: 0 30px 15px;
-            font-size: 16px;
-            color: var(--text-dark);
-        }
-
-        .modal-body {
-            padding: 15px 30px 30px;
-        }
-
-        .modal-form .form-group {
-            margin-bottom: 15px;
-        }
-
-        .modal-form .form-group label {
-            display: block;
-            margin-bottom: 6px;
-            font-weight: 500;
-            font-size: 14px;
-            color: var(--text-heading);
-        }
-
-        .modal-form .form-group input,
-        .modal-form .form-group textarea,
-        .modal-form .form-group select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #e0e0e0;
-            border-radius: 4px;
-            font-size: 14px;
-            font-family: 'Roboto', sans-serif;
-            color: var(--text-dark);
-            background: var(--white);
-        }
-
-        .modal-form .form-group input:focus,
-        .modal-form .form-group textarea:focus,
-        .modal-form .form-group select:focus {
-            outline: none;
-            border-color: var(--text-heading);
-        }
-
-        .modal-form .form-group textarea {
-            resize: vertical;
-            min-height: 80px;
-        }
-
-        .modal-form .btn {
-            width: 100%;
-            padding: 12px 24px;
-            background: var(--text-heading);
-            color: var(--white);
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .modal-form .btn:hover {
-            background: #000;
-        }
-
-        .modal-success {
-            display: none;
-            padding: 30px;
-            text-align: center;
-        }
-
-        .modal-success.active {
-            display: block;
-        }
-
-        .modal-success h3 {
-            font-size: 22px;
-            color: var(--text-heading);
-            margin-bottom: 10px;
-        }
-
-        .modal-success p {
-            font-size: 16px;
-            color: var(--text-dark);
-        }
 
         /* Responsive */
         @media (max-width: 1200px) {
@@ -1221,8 +1046,8 @@
                     <a href="#services">Услуги</a>
                     <a href="#cases">Портфолио</a>
                     <a href="#stats">О компании</a>
-                    <a href="#" class="btn-open-modal" data-modal="modal-call">Позвонить</a>
-                    <a href="#" class="btn-open-modal" data-modal="modal-consultation">Заполнить форму</a>
+                    <a href="tel:+79061234567">Позвонить</a>
+                    <a href="#contact-final">Заполнить форму</a>
                 </nav>
             </div>
             <div class="menu-right">
@@ -1319,7 +1144,7 @@
                     <p>Рулоны, разные форматы, флексопечать, яркие цвета</p>
                     <div class="service-price">Стоимость от: 2500₽</div>
                     <div class="service-time">⏱️ Сроки печати: 3-5 дней</div>
-                    <a href="#" class="btn btn-primary btn-open-modal" data-modal="modal-order" data-service="Самоклеящиеся этикетки" data-price="2500₽">Заказать от 2500₽</a>
+                    <a href="#contact-final" class="btn btn-primary">Заказать от 2500₽</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">📄</div>
@@ -1327,7 +1152,7 @@
                     <p>Быстрая цифровая печать, этикеточная бумага</p>
                     <div class="service-price">Стоимость от: 1800₽</div>
                     <div class="service-time">⏱️ Сроки печати: 2-4 дня</div>
-                    <a href="#" class="btn btn-primary btn-open-modal" data-modal="modal-order" data-service="Бесклеевые этикетки" data-price="1800₽">Заказать от 1800₽</a>
+                    <a href="#contact-final" class="btn btn-primary">Заказать от 1800₽</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🎁</div>
@@ -1335,7 +1160,7 @@
                     <p>Пленки, бумаги, фольга, полный спектр</p>
                     <div class="service-price">Стоимость от: 3500₽</div>
                     <div class="service-time">⏱️ Сроки печати: 4-6 дней</div>
-                    <a href="#" class="btn btn-primary btn-open-modal" data-modal="modal-order" data-service="Упаковка" data-price="3500₽">Заказать от 3500₽</a>
+                    <a href="#contact-final" class="btn btn-primary">Заказать от 3500₽</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🏷️</div>
@@ -1343,7 +1168,7 @@
                     <p>DataMatrix коды высочайшего качества</p>
                     <div class="service-price">Стоимость от: 4200₽</div>
                     <div class="service-time">⏱️ Сроки печати: 5-7 дней</div>
-                    <a href="#" class="btn btn-primary btn-open-modal" data-modal="modal-order" data-service="Маркировка Честный знак" data-price="4200₽">Заказать от 4200₽</a>
+                    <a href="#contact-final" class="btn btn-primary">Заказать от 4200₽</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🔌</div>
@@ -1351,7 +1176,7 @@
                     <p>Термотрансферные ленты, риббоны</p>
                     <div class="service-price">Стоимость от: 1200₽</div>
                     <div class="service-time">⏱️ Сроки печати: 1-2 дня</div>
-                    <a href="#" class="btn btn-primary btn-open-modal" data-modal="modal-order" data-service="Расходники" data-price="1200₽">Заказать от 1200₽</a>
+                    <a href="#contact-final" class="btn btn-primary">Заказать от 1200₽</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🖨️</div>
@@ -1359,7 +1184,7 @@
                     <p>Продаем и консультируем</p>
                     <div class="service-price">Консультация бесплатно</div>
                     <div class="service-time">⏱️ Сроки: По договору</div>
-                    <a href="#" class="btn btn-primary btn-open-modal" data-modal="modal-consultation">Получить консультацию</a>
+                    <a href="#contact-final" class="btn btn-primary">Получить консультацию</a>
                 </div>
             </div>
         </div>
@@ -1752,8 +1577,8 @@
                     </div>
                 </div>
                 <div class="cta-actions">
-                    <a href="#" class="btn btn-primary btn-open-modal" data-modal="modal-call">Позвонить</a>
-                    <a href="#" class="btn btn-secondary btn-open-modal" data-modal="modal-consultation">Заполнить форму</a>
+                    <a href="tel:+79061234567" class="btn btn-primary">Позвонить</a>
+                    <a href="#contact-final" class="btn btn-secondary">Заполнить форму</a>
                 </div>
             </div>
         </div>
@@ -1887,7 +1712,7 @@
                             <label for="message">Сообщение</label>
                             <textarea id="message" name="message" placeholder="Опишите вашу задачу"></textarea>
                         </div>
-                        <button type="button" class="btn btn-primary btn-lg btn-open-modal" data-modal="modal-final">ОТПРАВИТЬ</button>
+                        <button type="submit" class="btn btn-primary btn-lg">ОТПРАВИТЬ</button>
                     </form>
                 </div>
             </div>
@@ -1906,284 +1731,9 @@
         </div>
     </footer>
 
-    <!-- Modal: Call -->
-    <div class="modal-overlay" id="modal-call">
-        <div class="modal-container">
-            <button class="modal-close" onclick="closeModal('modal-call')">&times;</button>
-            <div class="modal-header">
-                <h2 class="modal-title">Позвоните нам прямо сейчас</h2>
-                <p class="modal-utp">Менеджер ответит за 2 минуты</p>
-            </div>
-            <div class="modal-phone">
-                <a href="tel:+79061234567">☎️ +7 (906) 123-45-67</a>
-            </div>
-            <div class="modal-body">
-                <form class="modal-form" onsubmit="return handleModalSubmit(event, 'modal-call')">
-                    <div class="form-group">
-                        <label for="call-name">Ваше имя *</label>
-                        <input type="text" id="call-name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="call-phone">Ваш телефон *</label>
-                        <input type="tel" id="call-phone" name="phone" placeholder="+7 (___) ___-__-__" required>
-                    </div>
-                    <button type="submit" class="btn">Перезвонить мне</button>
-                </form>
-            </div>
-            <div class="modal-success" id="modal-call-success">
-                <h3>✅ Спасибо за заявку!</h3>
-                <p>Мы перезвоним вам в течение 2 минут</p>
-            </div>
-        </div>
-    </div>
 
-    <!-- Modal: Consultation -->
-    <div class="modal-overlay" id="modal-consultation">
-        <div class="modal-container">
-            <button class="modal-close" onclick="closeModal('modal-consultation')">&times;</button>
-            <div class="modal-header">
-                <h2 class="modal-title">Нужна консультация?</h2>
-                <p class="modal-utp">Определим лучшее решение за 15 минут</p>
-            </div>
-            <div class="modal-body">
-                <form class="modal-form" onsubmit="return handleModalSubmit(event, 'modal-consultation')">
-                    <div class="form-group">
-                        <label for="cons-name">Ваше имя *</label>
-                        <input type="text" id="cons-name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="cons-company">Компания</label>
-                        <input type="text" id="cons-company" name="company">
-                    </div>
-                    <div class="form-group">
-                        <label for="cons-email">Email *</label>
-                        <input type="email" id="cons-email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="cons-phone">Телефон *</label>
-                        <input type="tel" id="cons-phone" name="phone" placeholder="+7 (___) ___-__-__" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="cons-type">Тип продукции</label>
-                        <select id="cons-type" name="product_type">
-                            <option value="">Выберите тип</option>
-                            <option value="Этикетки">Этикетки</option>
-                            <option value="Упаковка">Упаковка</option>
-                            <option value="Маркировка">Маркировка</option>
-                            <option value="Расходники">Расходники</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="cons-volume">Объем (например: 5000 шт)</label>
-                        <input type="text" id="cons-volume" name="volume" placeholder="5000 шт">
-                    </div>
-                    <div class="form-group">
-                        <label for="cons-comment">Комментарий</label>
-                        <textarea id="cons-comment" name="comment"></textarea>
-                    </div>
-                    <button type="submit" class="btn">Отправить</button>
-                </form>
-            </div>
-            <div class="modal-success" id="modal-consultation-success">
-                <h3>✅ Заявка отправлена!</h3>
-                <p>Мы свяжемся с вами в течение 15 минут для консультации</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal: Order Service -->
-    <div class="modal-overlay" id="modal-order">
-        <div class="modal-container">
-            <button class="modal-close" onclick="closeModal('modal-order')">&times;</button>
-            <div class="modal-header">
-                <h2 class="modal-title" id="modal-order-title">Заказ услуги</h2>
-                <p class="modal-utp">Начало работы за 24 часа</p>
-            </div>
-            <div class="modal-info" id="modal-order-price"></div>
-            <div class="modal-body">
-                <form class="modal-form" onsubmit="return handleModalSubmit(event, 'modal-order')">
-                    <div class="form-group">
-                        <label for="order-name">Ваше имя *</label>
-                        <input type="text" id="order-name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="order-company">Компания</label>
-                        <input type="text" id="order-company" name="company">
-                    </div>
-                    <div class="form-group">
-                        <label for="order-email">Email *</label>
-                        <input type="email" id="order-email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="order-phone">Телефон *</label>
-                        <input type="tel" id="order-phone" name="phone" placeholder="+7 (___) ___-__-__" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="order-volume">Объем</label>
-                        <input type="text" id="order-volume" name="volume" placeholder="5000 шт">
-                    </div>
-                    <div class="form-group">
-                        <label for="order-description">Описание задачи</label>
-                        <textarea id="order-description" name="description"></textarea>
-                    </div>
-                    <button type="submit" class="btn">Заказать</button>
-                </form>
-            </div>
-            <div class="modal-success" id="modal-order-success">
-                <h3>✅ Заказ принят!</h3>
-                <p>Мы начнем работу в течение 24 часов. Менеджер свяжется с вами для уточнения деталей</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal: Final Order -->
-    <div class="modal-overlay" id="modal-final">
-        <div class="modal-container">
-            <button class="modal-close" onclick="closeModal('modal-final')">&times;</button>
-            <div class="modal-header">
-                <h2 class="modal-title">Готовы начать?</h2>
-                <p class="modal-utp">350+ компаний уже работают с Лейбл Групп</p>
-            </div>
-            <div class="modal-body">
-                <form class="modal-form" onsubmit="return handleModalSubmit(event, 'modal-final')">
-                    <div class="form-group">
-                        <label for="final-name">Ваше имя *</label>
-                        <input type="text" id="final-name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="final-company">Компания *</label>
-                        <input type="text" id="final-company" name="company" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="final-email">Email *</label>
-                        <input type="email" id="final-email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="final-phone">Телефон *</label>
-                        <input type="tel" id="final-phone" name="phone" placeholder="+7 (___) ___-__-__" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="final-message">Сообщение</label>
-                        <textarea id="final-message" name="message"></textarea>
-                    </div>
-                    <button type="submit" class="btn">Отправить заявку</button>
-                </form>
-            </div>
-            <div class="modal-success" id="modal-final-success">
-                <h3>✅ Заявка отправлена!</h3>
-                <p>Спасибо за интерес к Лейбл Групп! Мы свяжемся с вами в ближайшее время</p>
-            </div>
-        </div>
-    </div>
 
     <script>
-        // Modal Functions
-        function openModal(modalId, serviceName, servicePrice) {
-            const modal = document.getElementById(modalId);
-            if (!modal) return;
-            
-            // Reset modal to form view
-            const form = modal.querySelector('.modal-form');
-            const success = modal.querySelector('.modal-success');
-            if (form) form.style.display = 'block';
-            if (success) success.classList.remove('active');
-            
-            // Update dynamic content for order modal
-            if (modalId === 'modal-order' && serviceName) {
-                document.getElementById('modal-order-title').textContent = 'Заказ услуги: ' + serviceName;
-                document.getElementById('modal-order-price').textContent = 'Стоимость: от ' + servicePrice;
-            }
-            
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function closeModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if (!modal) return;
-            
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-            
-            // Reset form after animation
-            setTimeout(() => {
-                const form = modal.querySelector('.modal-form');
-                if (form) {
-                    form.reset();
-                    form.style.display = 'block';
-                }
-                const success = modal.querySelector('.modal-success');
-                if (success) success.classList.remove('active');
-            }, 300);
-        }
-        
-        function handleModalSubmit(event, modalId) {
-            event.preventDefault();
-            
-            const modal = document.getElementById(modalId);
-            const form = modal.querySelector('.modal-form');
-            const success = modal.querySelector('.modal-success');
-            
-            // Validate required fields
-            const requiredInputs = form.querySelectorAll('[required]');
-            let isValid = true;
-            requiredInputs.forEach(input => {
-                if (!input.value.trim()) {
-                    isValid = false;
-                    input.style.borderColor = '#ff0000';
-                } else {
-                    input.style.borderColor = '#e0e0e0';
-                }
-            });
-            
-            if (!isValid) {
-                alert('Пожалуйста, заполните все обязательные поля');
-                return false;
-            }
-            
-            // Show success message
-            form.style.display = 'none';
-            success.classList.add('active');
-            
-            // Auto close after 3 seconds
-            setTimeout(() => {
-                closeModal(modalId);
-            }, 3000);
-            
-            return false;
-        }
-        
-        // Modal trigger buttons
-        document.addEventListener('click', (e) => {
-            if (e.target.classList.contains('btn-open-modal') || 
-                e.target.closest('.btn-open-modal')) {
-                e.preventDefault();
-                const trigger = e.target.classList.contains('btn-open-modal') ? 
-                    e.target : e.target.closest('.btn-open-modal');
-                const modalId = trigger.getAttribute('data-modal');
-                const serviceName = trigger.getAttribute('data-service');
-                const servicePrice = trigger.getAttribute('data-price');
-                openModal(modalId, serviceName, servicePrice);
-            }
-        });
-        
-        // Close modal on overlay click
-        document.querySelectorAll('.modal-overlay').forEach(overlay => {
-            overlay.addEventListener('click', (e) => {
-                if (e.target === overlay) {
-                    closeModal(overlay.id);
-                }
-            });
-        });
-        
-        // Close modal on ESC key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                document.querySelectorAll('.modal-overlay.active').forEach(modal => {
-                    closeModal(modal.id);
-                });
-            }
-        });
 
         // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(question => {
@@ -2251,10 +1801,10 @@
             const phone = document.getElementById('phone').value;
             
             if (name && phone) {
-                alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.');
+                alert('✅ Спасибо за заявку! Мы свяжемся с вами в ближайшее время.');
                 e.target.reset();
             } else {
-                alert('Пожалуйста, заполните обязательные поля.');
+                alert('⚠️ Пожалуйста, заполните обязательные поля (Имя и Телефон).');
             }
         });
 
