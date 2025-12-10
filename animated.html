@@ -1,0 +1,1766 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профильдоор-М | Промышленные ворота под ключ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1f2937;
+            --primary-light: #374151;
+            --accent: #ff6b35;
+            --accent-light: #ff8c5a;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --bg-white: #ffffff;
+            --border-color: #e5e7eb;
+            --success: #10b981;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-white);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 0 rgba(255, 107, 53, 0.4); }
+            50% { box-shadow: 0 0 20px rgba(255, 107, 53, 0.8); }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px 0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            animation: slideInDown 0.5s ease;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header-top {
+            font-size: 13px;
+            color: var(--text-light);
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header-top-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-right: 25px;
+            animation: fadeIn 0.7s ease;
+        }
+
+        .header-top-item a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .header-top-item a:hover {
+            color: var(--accent);
+            transform: translateX(3px);
+        }
+
+        .navbar-custom {
+            padding: 8px 0;
+        }
+
+        .navbar-brand {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary) !important;
+            margin-right: 50px;
+            animation: slideInLeft 0.6s ease;
+        }
+
+        .nav-link {
+            color: var(--text-dark) !important;
+            font-weight: 500;
+            font-size: 14px;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--accent) !important;
+            transform: translateY(-2px);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-left: auto;
+        }
+
+        .phone-header {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 16px;
+            animation: slideInRight 0.6s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-header {
+            background: var(--accent);
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: slideInRight 0.7s ease;
+        }
+
+        .btn-header:hover {
+            background: var(--accent-light);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255,107,53,0.4);
+        }
+
+        /* ===== SECTIONS ===== */
+        section {
+            padding: 60px 0;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        section.light-bg {
+            background: var(--bg-light);
+        }
+
+        section.accent-bg {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* ===== SECTION 1: HERO/UTP ===== */
+        .hero-section {
+            padding-top: 120px;
+            padding-bottom: 40px;
+        }
+
+        .hero-title {
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            color: var(--primary);
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero-utp {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid var(--accent);
+            animation: fadeInUp 0.8s ease 0.3s both;
+        }
+
+        .hero-triggers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .trigger {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            color: var(--text-dark);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .trigger:nth-child(2) {
+            animation: fadeInUp 0.8s ease 0.1s both;
+        }
+
+        .trigger-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            animation: scaleIn 0.6s ease;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary-large {
+            background: var(--accent);
+            color: white;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease 0.4s both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary-large::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-primary-large:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary-large:hover {
+            background: var(--accent-light);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255,107,53,0.3);
+        }
+
+        .btn-secondary-large {
+            background: transparent;
+            color: var(--primary);
+            padding: 15px 35px;
+            border: 2px solid var(--primary);
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease 0.5s both;
+        }
+
+        .btn-secondary-large:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* ===== CALCULATOR ===== */
+        .calculator-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease;
+            transition: all 0.3s ease;
+        }
+
+        .calculator-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            transform: translateY(-3px);
+        }
+
+        .form-label {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .form-control {
+            border: 1px solid var(--border-color);
+            padding: 12px 15px;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(255,107,53,0.1);
+            outline: none;
+            transform: translateY(-2px);
+        }
+
+        .result-box {
+            background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+            animation: scaleIn 0.8s ease;
+        }
+
+        .result-amount {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            animation: bounce 2s infinite;
+        }
+
+        /* ===== CONTENT CARDS ===== */
+        .content-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .content-card:nth-child(2) { animation-delay: 0.1s; }
+        .content-card:nth-child(3) { animation-delay: 0.2s; }
+        .content-card:nth-child(4) { animation-delay: 0.3s; }
+
+        .content-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            transform: translateY(-5px);
+        }
+
+        .content-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .content-card p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .content-card ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .content-card li {
+            font-size: 13px;
+            color: var(--text-light);
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .content-card li:hover {
+            padding-left: 30px;
+            color: var(--accent);
+        }
+
+        .content-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* ===== LICENSE CARDS ===== */
+        .license-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            text-align: center;
+            margin-bottom: 20px;
+            border-top: 4px solid var(--accent);
+            animation: fadeInUp 0.8s ease;
+            transition: all 0.3s ease;
+        }
+
+        .license-card:nth-child(2) { animation-delay: 0.1s; }
+        .license-card:nth-child(3) { animation-delay: 0.2s; }
+        .license-card:nth-child(4) { animation-delay: 0.3s; }
+
+        .license-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .license-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            animation: bounce 2s infinite;
+        }
+
+        .license-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .license-description {
+            font-size: 13px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* ===== STAT BOX ===== */
+        .stat-box {
+            text-align: center;
+            padding: 30px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .stat-box:nth-child(2) { animation-delay: 0.1s; }
+        .stat-box:nth-child(3) { animation-delay: 0.2s; }
+        .stat-box:nth-child(4) { animation-delay: 0.3s; }
+
+        .stat-number {
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 8px;
+            animation: bounce 2s infinite;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-box {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            color: white;
+            animation: scaleIn 0.8s ease;
+        }
+
+        .cta-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .cta-subtitle {
+            font-size: 16px;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+
+        .timer {
+            font-size: 48px;
+            font-weight: 700;
+            font-family: 'Courier New', monospace;
+            margin: 25px 0;
+            letter-spacing: 2px;
+            animation: glow 2s infinite;
+        }
+
+        .timer-label {
+            font-size: 13px;
+            opacity: 0.85;
+            margin-bottom: 25px;
+        }
+
+        /* ===== STEPS ===== */
+        .step {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 40px;
+            align-items: flex-start;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .step:nth-child(2) { animation-delay: 0.1s; }
+        .step:nth-child(3) { animation-delay: 0.2s; }
+        .step:nth-child(4) { animation-delay: 0.3s; }
+        .step:nth-child(5) { animation-delay: 0.4s; }
+        .step:nth-child(6) { animation-delay: 0.5s; }
+        .step:nth-child(7) { animation-delay: 0.6s; }
+        .step:nth-child(8) { animation-delay: 0.7s; }
+
+        .step-number {
+            min-width: 50px;
+            height: 50px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 700;
+            flex-shrink: 0;
+            animation: scaleIn 0.6s ease;
+        }
+
+        .step-content h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .step-content p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .step-content ul {
+            list-style: none;
+            margin-top: 12px;
+        }
+
+        .step-content li {
+            font-size: 13px;
+            color: var(--text-light);
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .step-content li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* ===== TIMELINE CARD ===== */
+        .timeline-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent);
+            animation: fadeInUp 0.8s ease;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .timeline-duration {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .timeline-description {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* ===== CLIENTS ===== */
+        .client-logo {
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .client-logo span {
+            color: var(--text-light);
+            font-weight: 500;
+            font-size: 13px;
+            display: block;
+            margin-top: 5px;
+        }
+
+        /* ===== GALLERY ===== */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .gallery-item:nth-child(2) { animation-delay: 0.05s; }
+        .gallery-item:nth-child(3) { animation-delay: 0.1s; }
+        .gallery-item:nth-child(4) { animation-delay: 0.15s; }
+        .gallery-item:nth-child(5) { animation-delay: 0.2s; }
+        .gallery-item:nth-child(6) { animation-delay: 0.25s; }
+        .gallery-item:nth-child(7) { animation-delay: 0.3s; }
+        .gallery-item:nth-child(8) { animation-delay: 0.35s; }
+
+        .gallery-item:hover {
+            transform: scale(1.08) rotate(2deg);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+        }
+
+        /* ===== FORM ===== */
+        .form-card {
+            background: white;
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            animation: scaleIn 0.8s ease;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(255,107,53,0.1);
+            outline: none;
+            transform: translateY(-2px);
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 15px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-submit::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-submit:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-submit:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255,107,53,0.3);
+        }
+
+        .success-msg {
+            display: none;
+            background: var(--success);
+            color: white;
+            padding: 20px;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 600;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        .success-msg.show {
+            display: block;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+            animation: fadeIn 0.8s ease;
+        }
+
+        footer p {
+            font-size: 13px;
+            opacity: 0.8;
+            margin-bottom: 8px;
+        }
+
+        footer strong {
+            opacity: 1;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 28px;
+            }
+
+            .nav-link {
+                margin: 0 8px;
+                font-size: 13px;
+            }
+
+            .header-actions {
+                gap: 10px;
+            }
+
+            .btn-header {
+                padding: 8px 15px;
+                font-size: 12px;
+            }
+
+            .phone-header {
+                font-size: 14px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary-large,
+            .btn-secondary-large {
+                width: 100%;
+            }
+
+            .step {
+                gap: 15px;
+                margin-bottom: 25px;
+            }
+
+            .step-number {
+                min-width: 40px;
+                height: 40px;
+            }
+
+            .timer {
+                font-size: 32px;
+            }
+
+            .header-top-item {
+                margin-right: 10px;
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER TOP -->
+<div class="header-top">
+    <div class="section-container">
+        <div class="d-flex justify-content-between align-items-center flex-wrap">
+            <div style="display: flex; gap: 10px;">
+                <div class="header-top-item">
+                    <span>☎️</span>
+                    <a href="tel:+74955555555"><strong>+7 (495) 555-55-55</strong></a>
+                </div>
+                <div class="header-top-item">
+                    <span>📍</span>
+                    <a href="#"><strong>Москва, ул. Рабочая, д. 1</strong></a>
+                </div>
+            </div>
+            <div style="font-size: 12px; color: var(--text-light);">
+                Режим работы: пн-пт 9-18, сб-вс 10-16
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN HEADER -->
+<header>
+    <div class="section-container">
+        <nav class="navbar navbar-expand-lg navbar-custom">
+            <a class="navbar-brand" href="#">Профильдоор-М</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#about">О компании</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#process">Как мы работаем</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#clients">Клиенты</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#guarantee">Гарантия</a></li>
+                </ul>
+            </div>
+
+            <div class="header-actions">
+                <div class="phone-header">
+                    <span>☎️</span>
+                    <span>+7 (495) 555-55-55</span>
+                </div>
+                <button class="btn-header" onclick="scrollToForm()">Рассчитать стоимость</button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- SECTION 1: HERO & UTP -->
+<section class="hero-section">
+    <div class="section-container">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1 class="hero-title">Промышленные ворота под ключ за 30–45 дней</h1>
+                
+                <div class="hero-utp">
+                    Проектирование, поставка, монтаж и сервис от одной компании с гарантией 5–7 лет и выездом за 2 часа при поломке. Фиксируем смету до договора — приёмка проходит с первого раза без переделок.
+                </div>
+
+                <div class="hero-triggers">
+                    <div class="trigger">
+                        <div class="trigger-icon">✓</div>
+                        <span>Полный цикл: проект → поставка → монтаж → гарантия</span>
+                    </div>
+                    <div class="trigger">
+                        <div class="trigger-icon">✓</div>
+                        <span>Лицензии МЧС, СРО, ФСБ — приёмка с первого раза</span>
+                    </div>
+                </div>
+
+                <div class="hero-buttons">
+                    <button class="btn-primary-large" onclick="scrollToForm()">🔴 Получить расчёт</button>
+                    <button class="btn-secondary-large">⭕ Посмотреть примеры</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 2: TRIGGERS / GUARANTEE -->
+<section class="light-bg" id="guarantee">
+    <div class="section-container">
+        <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 40px; color: var(--primary);">Почему выбирают нас</h2>
+        
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="content-card">
+                    <h3>🛡️ Гарантия 5-7 лет</h3>
+                    <p>Полная гарантия на оборудование и монтаж. 2 обслуживания в год БЕСПЛАТНО. Выезд за 2 часа при аварии.</p>
+                    <ul>
+                        <li>Замена деталей и уплотнителей</li>
+                        <li>24/7 техническая поддержка</li>
+                        <li>Пост-гарантийный сервис со скидкой</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="content-card">
+                    <h3>💰 Честная цена без доплат</h3>
+                    <p>Фиксируем смету до договора. Что в смете — то и платите. Никаких скрытых расходов.</p>
+                    <ul>
+                        <li>Бесплатный выезд замерщика</li>
+                        <li>Подробное коммерческое предложение</li>
+                        <li>Гибкие условия оплаты</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="content-card">
+                    <h3>👷 Собственные монтажники</h3>
+                    <p>Штатные сертифицированные бригады с опытом 7+ лет. Не наёмные подрядчики.</p>
+                    <ul>
+                        <li>Видеодокументация каждого монтажа</li>
+                        <li>Качество гарантировано</li>
+                        <li>Быстрая переделка по гарантии</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="content-card">
+                    <h3>⚡ 4 бренда на выбор</h3>
+                    <p>Alutec, Hörmann, DoorHan + собственная линейка. Решение для каждого бюджета.</p>
+                    <ul>
+                        <li>От 400k до 1.8m рублей</li>
+                        <li>Официальные дистрибьюторы</li>
+                        <li>Прямые поставки с минимальными сроками</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 3: CALCULATOR -->
+<section id="calc">
+    <div class="section-container">
+        <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 40px; color: var(--primary);">Расчитайте стоимость сейчас</h2>
+        
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="calculator-card">
+                    <div class="form-group">
+                        <label class="form-label">Тип объекта:</label>
+                        <select class="form-control">
+                            <option>Выберите тип объекта</option>
+                            <option>Завод / производство</option>
+                            <option>Логистический центр</option>
+                            <option>Склад / распределительный центр</option>
+                            <option>Другое</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Приоритет:</label>
+                        <select class="form-control">
+                            <option>Выберите приоритет</option>
+                            <option>Скорость</option>
+                            <option>Надёжность</option>
+                            <option>Цена</option>
+                            <option>Противопожарность</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Примерный бюджет (руб):</label>
+                        <input type="number" id="budget" class="form-control" placeholder="500000" value="500000" onchange="calcPrice()">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Срочность:</label>
+                        <select class="form-control">
+                            <option>Выберите срочность</option>
+                            <option>Нужно вчера</option>
+                            <option>В течение месяца</option>
+                            <option>Плюс-минус</option>
+                            <option>Есть время</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="result-box">
+                    <p style="font-size: 14px; margin: 0 0 10px 0;">Примерная стоимость:</p>
+                    <div class="result-amount" id="resultAmount">500 000 ₽</div>
+                    <div class="result-text" style="margin-bottom: 20px;">+ монтаж и гарантия 5-7 лет</div>
+                    
+                    <button class="btn-primary-large" style="width: 100%; background: rgba(255,255,255,0.2); border: 2px solid white;" onclick="scrollToForm()">
+                        Уточнить расчёт
+                    </button>
+                    
+                    <p style="font-size: 12px; margin-top: 20px; opacity: 0.8;">
+                        ✓ Бесплатная консультация<br>
+                        ✓ Без обязательств<br>
+                        ✓ Точная смета за 10 минут
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 4: WE CAN BE USEFUL IF -->
+<section class="light-bg">
+    <div class="section-container">
+        <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 40px; color: var(--primary);">Мы можем быть вам полезны если:</h2>
+        
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="content-card">
+                    <h3 style="color: var(--accent);">📐 Проектирование</h3>
+                    <p>Нужна разработка проектной документации с BIM-моделями. Согласование с надзорными органами.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="content-card">
+                    <h3 style="color: var(--accent);">📦 Поставка</h3>
+                    <p>Нужна закупка оборудования у производителей. Мы возьмём на себя всю логистику и координацию.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="content-card">
+                    <h3 style="color: var(--accent);">🔨 Монтаж</h3>
+                    <p>Нужна установка и наладка. Собственные сертифицированные бригады с опытом 7+ лет.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="content-card">
+                    <h3 style="color: var(--accent);">🛡️ Гарантия & Сервис</h3>
+                    <p>Нужна гарантия и техническая поддержка. 5-7 лет + 24/7 поддержка и выезд за 2 часа.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 5: ABOUT COMPANY -->
+<section id="about">
+    <div class="section-container">
+        <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 40px; color: var(--primary);">О компании Профильдоор-М</h2>
+        
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <p style="font-size: 16px; color: var(--text-dark); margin-bottom: 20px; animation: fadeInUp 0.8s ease;">
+                    Профильдоор-М — это команда профессионалов, которая собирает промышленные ворота и проёмы уже <strong>10 лет</strong>. Мы работаем с официальными дистрибьюторами крупных брендов и имеем все необходимые лицензии.
+                </p>
+                <p style="font-size: 16px; color: var(--text-dark); margin-bottom: 30px; animation: fadeInUp 0.8s ease 0.1s both;">
+                    Наша задача — упростить для вас весь процесс: от первой консультации до 24/7 поддержки после монтажа.
+                </p>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="stat-box">
+                            <div class="stat-number">2000+</div>
+                            <div class="stat-label">Проектов реализовано</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="stat-box">
+                            <div class="stat-number">10</div>
+                            <div class="stat-label">Лет на рынке</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="stat-box">
+                            <div class="stat-number">5.0 ⭐</div>
+                            <div class="stat-label">Рейтинг у клиентов</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="stat-box">
+                            <div class="stat-number">50%</div>
+                            <div class="stat-label">Постоянные клиенты</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 style="font-size: 22px; font-weight: 700; margin: 50px 0 30px 0; color: var(--primary);">Наши преимущества</h3>
+
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="license-card">
+                    <div class="license-icon">🔒</div>
+                    <div class="license-title">Лицензия МЧС</div>
+                    <div class="license-description">Противопожарные системы и оборудование</div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="license-card">
+                    <div class="license-icon">✓</div>
+                    <div class="license-title">Членство в СРО</div>
+                    <div class="license-description">Гарантия качества и надёжности работ</div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="license-card">
+                    <div class="license-icon">🏛️</div>
+                    <div class="license-title">Лицензия ФСБ</div>
+                    <div class="license-description">Работаем на государственных объектах</div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="license-card">
+                    <div class="license-icon">💰</div>
+                    <div class="license-title">Плательщик НДС</div>
+                    <div class="license-description">Прозрачность в расчётах и налогах</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 6: GALLERY -->
+<section class="light-bg">
+    <div class="section-container">
+        <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 40px; color: var(--primary);">Примеры наших работ</h2>
+        
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="gallery-item">Завод №1</div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="gallery-item">Логистический центр</div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="gallery-item">Распредцентр</div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="gallery-item">Склад</div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="gallery-item">Производство</div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="gallery-item">Развлекательный центр</div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="gallery-item">Спортивное сооружение</div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="gallery-item">Торговый центр</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 7: HOW WE SOLVE PROBLEMS -->
+<section>
+    <div class="section-container">
+        <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 40px; color: var(--primary);">Как мы решаем сложные ситуации</h2>
+        
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="content-card">
+                    <h3>⚡ Срочные заказы</h3>
+                    <p><strong>Проблема:</strong> Нужно срочно, а другие подрядчики требуют недели.</p>
+                    <p><strong>Наше решение:</strong> Собственный склад готового оборудования. Если вещь есть на складе — монтируем за 3-5 дней. Можем организовать срочный выезд.</p>
+                    <p style="color: var(--accent); font-weight: 600; margin-top: 15px;">✓ За 10 лет 99% сроки выполнены точно или раньше</p>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="content-card">
+                    <h3>🔧 Нестандартные проёмы</h3>
+                    <p><strong>Проблема:</strong> Проём не совпадает со стандартом, нужна доработка.</p>
+                    <p><strong>Наше решение:</strong> Своя конструкторская служба разрабатывает нестандартное решение. Есть опыт работ с асимметричными проёмами, изогнутыми стенами, ограничениями по высоте.</p>
+                    <p style="color: var(--accent); font-weight: 600; margin-top: 15px;">✓ За 10 лет решили 150+ нестандартных случаев</p>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="content-card">
+                    <h3>🚨 Поломка в гарантийный период</h3>
+                    <p><strong>Проблема:</strong> Ворота сломались, нужен срочный ремонт, приёмка срывается.</p>
+                    <p><strong>Наше решение:</strong> Выезд за 2 часа в любой день недели. Собственные монтажники решают проблему на месте. Если нужна запчасть — есть на складе. Бесплатно в течение 5-7 лет гарантии.</p>
+                    <p style="color: var(--accent); font-weight: 600; margin-top: 15px;">✓ Среднее время ремонта: 2 часа</p>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="content-card">
+                    <h3>📋 Согласование с надзорными органами</h3>
+                    <p><strong>Проблема:</strong> Надзорные органы требуют специальных решений (противопожарные, противолом), нужны лицензии.</p>
+                    <p><strong>Наше решение:</strong> Лицензии МЧС, СРО, ФСБ. Разработаем проект под требования надзорных органов. Проведём согласование. Приёмка проходит с первого раза.</p>
+                    <p style="color: var(--accent); font-weight: 600; margin-top: 15px;">✓ 0 замечаний при приёмке в последние 5 лет</p>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="content-card">
+                    <h3>💵 Ограничение бюджета</h3>
+                    <p><strong>Проблема:</strong> Бюджет малый, а требования серьёзные.</p>
+                    <p><strong>Наше решение:</strong> 4 бренда на выбор (от DoorHan за 400k до Hörmann за 1.8m). Поможем выбрать оптимальное решение. Гибкие условия оплаты (рассрочка, аванс 30-40%).</p>
+                    <p style="color: var(--accent); font-weight: 600; margin-top: 15px;">✓ Решение есть для любого бюджета</p>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="content-card">
+                    <h3>🤝 Конфликт с подрядчиком</h3>
+                    <p><strong>Проблема:</strong> Работали с другим подрядчиком, он не дожимает проект, не отвечает на звонки.</p>
+                    <p><strong>Наше решение:</strong> Возьмём на себя доделку (проверим качество, переделаем браки, установим недостающее). Дальше вся гарантия и поддержка на нас.</p>
+                    <p style="color: var(--accent); font-weight: 600; margin-top: 15px;">✓ Переделали 50+ проектов от других подрядчиков</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 8: CTA WITH TIMER -->
+<section class="accent-bg">
+    <div class="section-container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="cta-box" style="background: rgba(255,255,255,0.1); border: 2px solid white;">
+                    <h3 class="cta-title">🎁 СПЕЦПРЕДЛОЖЕНИЕ</h3>
+                    <p class="cta-subtitle">Скидка 10% + бесплатный расчёт смет + доп.гарантия на год</p>
+                    
+                    <p style="font-size: 14px; margin-bottom: 15px;">Предложение действует:</p>
+                    <div class="timer" id="timer">01:00:00</div>
+                    
+                    <button class="btn-primary-large" onclick="scrollToForm()" style="width: 100%; margin-bottom: 20px; background: white; color: var(--accent);">
+                        ПОЛУЧИТЬ СКИДКУ
+                    </button>
+                    
+                    <p style="font-size: 12px;">
+                        ⏰ Таймер обновляется каждый час
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 9: HOW IT WORKS -->
+<section class="light-bg" id="process">
+    <div class="section-container">
+        <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 40px; color: var(--primary);">Как это устроено</h2>
+        
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                    <h4 style="font-size: 18px; font-weight: 600; color: var(--primary); margin-bottom: 25px;">Полный цикл работ под ключ:</h4>
+
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Консультация и выезд</h4>
+                            <p>Звоните или оставляйте заявку. Менеджер проводит консультацию по телефону (15 мин). Если нужно — выезжаем для замеров (БЕСПЛАТНО). Уточняем все параметры на объекте.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Коммерческое предложение</h4>
+                            <p>Подготавливаем смету на основе ваших данных. Отправляем за 24 часа. Смета включает: проект, поставку, монтаж, гарантию. Цена фиксирована — без доплат.</p>
+                            <ul>
+                                <li>Банковская гарантия на аванс</li>
+                                <li>3 варианта на выбор (бюджет, оптимум, премиум)</li>
+                                <li>Гибкие условия оплаты</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Подписание договора</h4>
+                            <p>Согласовываем сроки, график работ, условия оплаты. Подписываем договор. Вносится первый аванс (обычно 30-40%). Договор защищает обе стороны.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Проектирование</h4>
+                            <p>Наш архитектор разрабатывает проектную документацию с BIM-моделью. Согласовываем с надзорными органами (МЧС, архитектурный надзор). Сроки: 5-10 дней в зависимости от сложности.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Поставка оборудования</h4>
+                            <p>Закупляем оборудование у производителей. Подготавливаем на складе (проверяем комплектность, упаковываем). Доставляем на объект в согласованные сроки. Обычно 10-20 дней.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h4>Монтаж и наладка</h4>
+                            <p>Наши сертифицированные бригады устанавливают ворота и проёмы. Проводят испытания и регулировку. Видеодокументация всех работ. Сроки: 3-7 дней в зависимости от объёма.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">7</div>
+                        <div class="step-content">
+                            <h4>Приёмка и запуск</h4>
+                            <p>Составляем акт сдачи-приёмки. Передаём вам все документы (паспорта, гарантийные листы, сертификаты, видео). Вы вносите финальный расчёт. Объект полностью готов к эксплуатации.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">∞</div>
+                        <div class="step-content">
+                            <h4>Гарантия и поддержка</h4>
+                            <p>5-7 лет гарантии на оборудование и монтаж. 2 бесплатных обслуживания в год. Выезд за 2 часа при аварии. 24/7 техническая поддержка всегда рядом.</p>
+                            <ul>
+                                <li>Звоните в любой день недели</li>
+                                <li>WhatsApp, Telegram поддержка</li>
+                                <li>Быстрые и качественные переделки по гарантии</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 10: TIMELINE -->
+<section class="light-bg">
+    <div class="section-container">
+        <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 40px; color: var(--primary);">Сроки и этапы работы</h2>
+        
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="timeline-card">
+                    <div class="timeline-duration">0-1 день</div>
+                    <div class="timeline-description"><strong>Консультация</strong><br>Звонок, выезд, замеры</div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="timeline-card">
+                    <div class="timeline-duration">1-2 дня</div>
+                    <div class="timeline-description"><strong>Коммерческое предложение</strong><br>Смета и условия оплаты</div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="timeline-card">
+                    <div class="timeline-duration">3 дня</div>
+                    <div class="timeline-description"><strong>Договор и аванс</strong><br>Подписание, платёж</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="timeline-card">
+                    <div class="timeline-duration">5-10 дней</div>
+                    <div class="timeline-description"><strong>Проектирование</strong><br>BIM-модель, согласования</div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="timeline-card">
+                    <div class="timeline-duration">10-20 дней</div>
+                    <div class="timeline-description"><strong>Поставка</strong><br>Закупка, доставка на объект</div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="timeline-card">
+                    <div class="timeline-duration">3-7 дней</div>
+                    <div class="timeline-description"><strong>Монтаж и наладка</strong><br>Установка, тестирование</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="timeline-card">
+                    <div class="timeline-duration">1 день</div>
+                    <div class="timeline-description"><strong>Приёмка</strong><br>Акт, документы, финрасчёт</div>
+                </div>
+            </div>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4"></div>
+        </div>
+
+        <div style="background: var(--accent); color: white; padding: 25px; border-radius: 8px; text-align: center; margin-top: 30px; animation: scaleIn 0.8s ease;">
+            <p style="font-size: 20px; font-weight: 700; margin: 0;">
+                ⚡ ИТОГО: 30–45 ДНЕЙ ОТ ЗВОНКА ДО ПОЛНОГО ЗАПУСКА
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 11: CLIENTS -->
+<section class="light-bg" id="clients">
+    <div class="section-container">
+        <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 15px; color: var(--primary);">С какими компаниями мы работаем</h2>
+        <p style="font-size: 16px; color: var(--text-light); margin-bottom: 40px;">Примеры крупных клиентов, которые доверяют нам:</p>
+        
+        <div class="row">
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                <div class="content-card" style="text-align: center;">
+                    <div class="client-logo">СБЕР<span>Финансовый</span></div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                <div class="content-card" style="text-align: center;">
+                    <div class="client-logo">ЯНДЕКС<span>Технологии</span></div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                <div class="content-card" style="text-align: center;">
+                    <div class="client-logo">LEROY MERLIN<span>Розница</span></div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                <div class="content-card" style="text-align: center;">
+                    <div class="client-logo">X5 RETAIL<span>Логистика</span></div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                <div class="content-card" style="text-align: center;">
+                    <div class="client-logo">METRO<span>Торговля</span></div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                <div class="content-card" style="text-align: center;">
+                    <div class="client-logo">WILDBERRIES<span>E-commerce</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: white; padding: 30px; border-radius: 8px; margin-top: 40px;">
+            <h4 style="font-size: 16px; font-weight: 600; color: var(--primary); margin-bottom: 20px;">📋 Отзывы клиентов</h4>
+            
+            <div class="row">
+                <div class="col-lg-4">
+                    <div style="padding: 20px; border-left: 3px solid var(--accent);">
+                        <p style="font-style: italic; color: var(--text-light); margin-bottom: 12px;">
+                            "За 10 лет мы установили у себя 50 ворот. Всё работает идеально. Менеджер Сергей помнит каждый проект. Надёжные люди."
+                        </p>
+                        <p style="font-weight: 600; color: var(--primary); margin: 0;">— Завод «Сигнал»</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div style="padding: 20px; border-left: 3px solid var(--accent);">
+                        <p style="font-style: italic; color: var(--text-light); margin-bottom: 12px;">
+                            "Нашли через знакомых. Сроки соблюдали, качество отличное. Гарантию уважают — в проблеме приезжали быстро."
+                        </p>
+                        <p style="font-weight: 600; color: var(--primary); margin: 0;">— Логистическая компания</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div style="padding: 20px; border-left: 3px solid var(--accent);">
+                        <p style="font-style: italic; color: var(--text-light); margin-bottom: 12px;">
+                            "Работаем на 5+ объектах одновременно. Есть люди и ресурсы — не мелочатся с подходом. Профессионалы."
+                        </p>
+                        <p style="font-weight: 600; color: var(--primary); margin: 0;">— Генподрядчик</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 12: FORM & SPECIAL OFFER -->
+<section class="accent-bg" id="form-section">
+    <div class="section-container">
+        <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 40px; color: white; text-align: center;">Получить бесплатный расчёт стоимости</h2>
+        
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="form-card">
+                    <p style="font-size: 14px; color: var(--text-light); margin-bottom: 20px; text-align: center;">
+                        Заполните форму — наш менеджер перезвонит за 2 часа с расчётом стоимости
+                    </p>
+
+                    <form id="contactForm" onsubmit="submitForm(event)">
+                        <div class="form-group">
+                            <label>Ваше имя *</label>
+                            <input type="text" required placeholder="Иван Петров">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Телефон *</label>
+                            <input type="tel" required placeholder="+7 (___) ___-__-__">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Тип объекта *</label>
+                            <select required>
+                                <option value="">Выберите...</option>
+                                <option>Завод / производство</option>
+                                <option>Логистический центр</option>
+                                <option>Склад / хранилище</option>
+                                <option>Другое</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Примерный бюджет *</label>
+                            <select required>
+                                <option value="">Выберите...</option>
+                                <option>До 500 000 ₽</option>
+                                <option>500 000 - 1 500 000 ₽</option>
+                                <option>1 500 000+ ₽</option>
+                                <option>Не знаю, подскажите</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Срочность</label>
+                            <select>
+                                <option>Выберите...</option>
+                                <option>Вчера (срочно)</option>
+                                <option>В течение месяца</option>
+                                <option>Есть время</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn-submit">
+                            ПОЛУЧИТЬ РАСЧЁТ БЕСПЛАТНО
+                        </button>
+
+                        <div class="success-msg" id="successMsg">
+                            ✅ Спасибо! Менеджер свяжется с вами за 2 часа
+                        </div>
+                    </form>
+
+                    <p style="font-size: 12px; color: var(--text-light); text-align: center; margin-top: 20px;">
+                        ✓ Без обязательств<br>
+                        ✓ Без спама<br>
+                        ✓ Честная цена
+                    </p>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 20px; border-radius: 8px; margin-top: 30px; color: white; text-align: center;">
+                    <p style="font-size: 14px; margin-bottom: 10px;"><strong>🎁 СПЕЦПРЕДЛОЖЕНИЕ</strong></p>
+                    <p style="font-size: 13px; margin: 0;">Первый заказ — скидка 10% + доп.гарантия на год</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="section-container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 15px;">Профильдоор-М</h4>
+                <p><strong>Промышленные ворота под ключ</strong></p>
+                <p>Полный цикл: проект, поставка, монтаж, гарантия 5-7 лет</p>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 15px;">Контакты</h4>
+                <p><strong>☎️ +7 (495) 555-55-55</strong></p>
+                <p>📧 info@profildoor-m.ru</p>
+                <p>💬 WhatsApp / Telegram</p>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 15px;">Адрес</h4>
+                <p>📍 Москва, ул. Рабочая, д. 1</p>
+                <p>Режим: пн-пт 9-18, сб-вс 10-16</p>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 15px;">Лицензии</h4>
+                <p>✓ МЧС (противопожарные системы)</p>
+                <p>✓ СРО (строительство и монтаж)</p>
+                <p>✓ ФСБ (гос.объекты)</p>
+            </div>
+        </div>
+
+        <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
+
+        <div style="text-align: center; padding-top: 20px;">
+            <p style="font-size: 12px; opacity: 0.7; margin: 0;">
+                © 2025 ООО "Профильдоор-М". Все права защищены. ИНН: 7722775000<br>
+                Официальный дистрибьютор: Alutec • Hörmann • DoorHan
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // CALCULATOR
+    function calcPrice() {
+        const budget = parseInt(document.getElementById('budget').value) || 500000;
+        document.getElementById('resultAmount').textContent = budget.toLocaleString('ru-RU') + ' ₽';
+    }
+
+    // TIMER - 1 HOUR
+    function updateTimer() {
+        let remaining = 3600; // 1 hour in seconds
+        
+        function updateDisplay() {
+            const hours = Math.floor(remaining / 3600);
+            const mins = Math.floor((remaining % 3600) / 60);
+            const secs = remaining % 60;
+            
+            document.getElementById('timer').textContent = 
+                String(hours).padStart(2, '0') + ':' + 
+                String(mins).padStart(2, '0') + ':' + 
+                String(secs).padStart(2, '0');
+        }
+        
+        updateDisplay();
+        
+        setInterval(() => {
+            remaining--;
+            if (remaining < 0) {
+                remaining = 3600; // Reset to 1 hour
+            }
+            updateDisplay();
+        }, 1000);
+    }
+
+    updateTimer();
+
+    // SCROLL TO FORM
+    function scrollToForm() {
+        document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // FORM SUBMIT
+    function submitForm(event) {
+        event.preventDefault();
+        
+        const form = document.getElementById('contactForm');
+        const successMsg = document.getElementById('successMsg');
+        
+        form.style.display = 'none';
+        successMsg.classList.add('show');
+        
+        setTimeout(() => {
+            successMsg.classList.remove('show');
+            form.style.display = 'block';
+            form.reset();
+        }, 3000);
+    }
+
+    // INIT
+    calcPrice();
+</script>
+
+</body>
+</html>
