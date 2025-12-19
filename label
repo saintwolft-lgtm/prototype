@@ -24,6 +24,7 @@
             --accent-blue-light: #42a5f5;
         }
 
+ 
         * {
             margin: 0;
             padding: 0;
